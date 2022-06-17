@@ -184,6 +184,27 @@ learn more you can refer to blog posts on
 <a href="https://wildfly-security.github.io/wildfly-elytron/blog/advanced-ejb-security/">configuring the FileSystem realm and SASL mechanism</a>,
 and on <a href="https://wildfly-security.github.io/wildfly-elytron/blog/ejb-over-http/">connecting with HTTP</a>.</p>
 </div>
+<div id="toc" class="toc">
+<div id="toctitle" class="title"></div>
+<ul class="sectlevel1">
+<li><a href="#an-overview-of-mutual-tls-authentication">An Overview of Mutual TLS authentication</a>
+<ul class="sectlevel2">
+<li><a href="#generating-the-client-certificate">Generating the Client Certificate</a></li>
+<li><a href="#generating-the-server-certificate">Generating the Server Certificate</a></li>
+<li><a href="#importing-the-certificates">Importing the Certificates</a></li>
+</ul>
+</li>
+<li><a href="#configuring-the-credential-store">Configuring the Credential Store</a>
+<ul class="sectlevel2">
+<li><a href="#configuring-the-wildfly-client">Configuring the WildFly Client</a></li>
+<li><a href="#configuring-the-security-domain">Configuring the Security Domain</a></li>
+<li><a href="#enabling-scram-sha-512-plus">Enabling SCRAM-SHA-512-PLUS</a></li>
+</ul>
+</li>
+<li><a href="#configuring-the-remote-connector">Configuring the Remote Connector</a></li>
+<li><a href="#summary">Summary</a></li>
+</ul>
+</div>
 <div class="sect1">
 <h2 id="an-overview-of-mutual-tls-authentication"><a class="anchor" href="#an-overview-of-mutual-tls-authentication"></a>An Overview of Mutual TLS authentication</h2>
 <div class="sectionbody">
@@ -198,11 +219,8 @@ presents its own certificate, which the server will then use to verify the ident
 will generate a certificate, which the server will import into its truststore. The client will be configured to present
 the certificate when performing the TLS handshake, which the server will verify using its truststore.</p>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="generating-the-client-certificate"><a class="anchor" href="#generating-the-client-certificate"></a>Generating the Client Certificate</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="generating-the-client-certificate"><a class="anchor" href="#generating-the-client-certificate"></a>Generating the Client Certificate</h3>
 <div class="paragraph">
 <p>In order for the client to use a certificate, it must be signed by a server-trusted entity. For the purposes of this
 demonstration, we will self-sign a certificate and then import it into the server&#8217;s truststore. However, such
@@ -232,10 +250,8 @@ match, the connection will fail.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="generating-the-server-certificate"><a class="anchor" href="#generating-the-server-certificate"></a>Generating the Server Certificate</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="generating-the-server-certificate"><a class="anchor" href="#generating-the-server-certificate"></a>Generating the Server Certificate</h3>
 <div class="paragraph">
 <p>We will now perform a similar configuration for the WildFly server. Start the server, and then in another terminal
 connect to it using the management CLI:</p>
@@ -285,10 +301,8 @@ specify the server&#8217;s common name (<code>distinguished-name="CN=localhost"<
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="importing-the-certificates"><a class="anchor" href="#importing-the-certificates"></a>Importing the Certificates</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="importing-the-certificates"><a class="anchor" href="#importing-the-certificates"></a>Importing the Certificates</h3>
 <div class="paragraph">
 <p>Since we are already connected to the server, we will import the client certificate first. We configure a new truststore for holding certificates:</p>
 </div>
@@ -332,6 +346,7 @@ The TLS configuration is complete.</p>
 </div>
 </div>
 </div>
+</div>
 <div class="sect1">
 <h2 id="configuring-the-credential-store"><a class="anchor" href="#configuring-the-credential-store"></a>Configuring the Credential Store</h2>
 <div class="sectionbody">
@@ -352,11 +367,8 @@ credential store to securely store the login details:</p>
 <pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">$ WILDFLY_HOME/bin/elytron-tool.sh credential-store --location "/PATH/TO/tlsCredStore.cs" --password clientStorePassword --add example_user --secret examplePwd1!</code></pre>
 </div>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="configuring-the-wildfly-client"><a class="anchor" href="#configuring-the-wildfly-client"></a>Configuring the WildFly Client</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="configuring-the-wildfly-client"><a class="anchor" href="#configuring-the-wildfly-client"></a>Configuring the WildFly Client</h3>
 <div class="paragraph">
 <p>Now that we have our keystore, truststore, and credential store configured, we need to tell the Elytron client how to
 access them. From the root of this example, navigate to the directory at <code>src/main/resources</code> and open the
@@ -462,10 +474,8 @@ WildFly server default for HTTP over TLS connections.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="configuring-the-security-domain"><a class="anchor" href="#configuring-the-security-domain"></a>Configuring the Security Domain</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="configuring-the-security-domain"><a class="anchor" href="#configuring-the-security-domain"></a>Configuring the Security Domain</h3>
 <div class="paragraph">
 <p>We will now configure the server to require a login. Returning to the terminal with the management CLI, we create a
 FileSystem realm called <code>tlsFsRealm</code> in the server configuration directory:</p>
@@ -504,10 +514,8 @@ FileSystem realm called <code>tlsFsRealm</code> in the server configuration dire
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="enabling-scram-sha-512-plus"><a class="anchor" href="#enabling-scram-sha-512-plus"></a>Enabling SCRAM-SHA-512-PLUS</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="enabling-scram-sha-512-plus"><a class="anchor" href="#enabling-scram-sha-512-plus"></a>Enabling SCRAM-SHA-512-PLUS</h3>
 <div class="paragraph">
 <p>Elytron supports two types of authentication: <code>HTTP authentication</code> and <code>SASL authentication</code>. We will use the SASL
 authentication mechanism <code>SCRAM-SHA-512-PLUS</code>, which performs channel binding with the TLS session. We create a
@@ -516,6 +524,7 @@ authentication mechanism <code>SCRAM-SHA-512-PLUS</code>, which performs channel
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-none hljs">/subsystem=elytron/sasl-authentication-factory=tlsSASLFactory:add(sasl-server-factory=configured,security-domain=tlsFsSD,mechanism-configurations=[{mechanism-name=SCRAM-SHA-512-PLUS}])</code></pre>
+</div>
 </div>
 </div>
 </div>
