@@ -38,12 +38,12 @@
 <meta property="og:site_name" content="WildFly Elytron" />
 <meta property="og:image" content="https://wildfly-security.github.io/wildfly-elytron/assets/images/wildfly-elytron-logo.jpg" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2022-06-20T00:00:00+00:00" />
+<meta property="article:published_time" content="2022-06-21T00:00:00+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:image" content="https://wildfly-security.github.io/wildfly-elytron/assets/images/wildfly-elytron-logo.jpg" />
 <meta property="twitter:title" content="Securing Jakarta Enterprise Beans with mutual TLS authentication" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Cameron Rodriguez"},"dateModified":"2022-06-20T00:00:00+00:00","datePublished":"2022-06-20T00:00:00+00:00","description":"The ejb-mutual-tls example demonstrates how to use Elytron to secure EJBs with mutual TLS authentication. It also shows how to restrict access to EJBs, configuring a FileSystem realm protected by SASL authentication, and accessed using a credential store. This example focuses on the TLS configuration, so if you wish to learn more you can refer to blog posts on configuring the FileSystem realm and SASL mechanism, and on connecting with HTTP.","headline":"Securing Jakarta Enterprise Beans with mutual TLS authentication","image":"https://wildfly-security.github.io/wildfly-elytron/assets/images/wildfly-elytron-logo.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"https://wildfly-security.github.io/wildfly-elytron/blog/ejb-over-tls/"},"url":"https://wildfly-security.github.io/wildfly-elytron/blog/ejb-over-tls/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Cameron Rodriguez"},"dateModified":"2022-06-21T00:00:00+00:00","datePublished":"2022-06-21T00:00:00+00:00","description":"The ejb-mutual-tls example demonstrates how to use Elytron to secure EJBs with mutual TLS authentication. It also shows how to restrict access to EJBs, configuring a FileSystem realm protected by SASL authentication, and accessed using a credential store. This example focuses on the TLS configuration, so if you wish to learn more you can refer to blog posts on configuring the FileSystem realm and SASL mechanism, and on connecting with HTTP.","headline":"Securing Jakarta Enterprise Beans with mutual TLS authentication","image":"https://wildfly-security.github.io/wildfly-elytron/assets/images/wildfly-elytron-logo.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"https://wildfly-security.github.io/wildfly-elytron/blog/ejb-over-tls/"},"url":"https://wildfly-security.github.io/wildfly-elytron/blog/ejb-over-tls/"}</script>
 <!-- End Jekyll SEO tag -->
 
 </head>
@@ -134,7 +134,7 @@
           <img class="headshot" src="https://www.gravatar.com/avatar/aba64bbfde66646d5b5bc40d23b7e0de">
         
         <p class="byline">
-          By <a href="https://github.com/cam-rod">Cameron Rodriguez</a> | June 20, 2022
+          By <a href="https://github.com/cam-rod">Cameron Rodriguez</a> | June 21, 2022
           <br>
           
             
@@ -238,12 +238,8 @@ Java <strong>keytool</strong>, we store it in a PKCS #12 keystore:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Note that we have set the common name on the key to <code>client</code> (using the option <code>-dname "CN=client"</code>). The server will
-try to match the common name on the certificate to the hostname presented during the TLS handshake. If the two do not
-match, the connection will fail.</p>
-</div>
-<div class="paragraph">
-<p>Once the key pair is created, we export the certificate to a file:</p>
+<p>Note that we have also set the common name on the key to <code>client</code> (using the option <code>-dname "CN=client"</code>). Once the key
+pair is created, we export the certificate to a file:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -275,8 +271,10 @@ saved in the server configuration directory, relative to <code>jboss.server.conf
 </div>
 </div>
 <div class="paragraph">
-<p>Then, we generate a key pair with alias <code>localhost</code>, and save it to the keystore. Like with the client, we also
-specify the server&#8217;s common name (<code>distinguished-name="CN=localhost"</code>).</p>
+<p>Then, we generate a key pair with alias <code>localhost</code>, and save it to the keystore. Like with the client,
+we also specify the server&#8217;s common name (<code>distinguished-name="CN=localhost"</code>). The client will
+try to match the common name on the server&#8217;s certificate to the hostname presented during the TLS
+handshake. If the two do not match, the connection will fail.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -418,7 +416,7 @@ configuration, which will be used to access the client&#8217;s credentials when 
 </div>
 <div class="paragraph">
 <p>Looking further into the configuration, we notice the setup for the user authentication under the
-<code>&lt;authentication-configurations&gt;</code> tag. The client uses the configuredusername, and then retrieves the password from the
+<code>&lt;authentication-configurations&gt;</code> tag. The client uses the configured username, and then retrieves the password from the
 credential store. It also specifies the SASL authentication mechanism to use, in this case <code>SCRAM-SHA-512-PLUS</code>.
 Finally, note that the <code>&lt;providers&gt;</code> tag configures the client to register the Elytron providers.</p>
 </div>
