@@ -272,4 +272,22 @@ body.post div.post-page .note, body.post div.post-page .colist { overflow: auto;
 
 .share-page .fa-linkedin, .share-page .fa-twitter-square, .share-page .fa-facebook-square, .share-page .fa-reddit-square, .share-page .fa-envelope-square { font-size: 2rem; max-width: 1.5rem; margin-right: .5rem; color: #004153 !important; }
 
+a.mdl-navigation__link.highlight-button { border: 2px solid #F0AB00 !important; border-radius: 10px; padding: 0 17px; font-weight: 600; line-height: 32px; transition-duration: 0.2s; background-color: #004153; color: #F0AB00; }
+
+a.mdl-navigation__link.highlight-button:hover, a.mdl-navigation__link.highlight-button:active, a.mdl-navigation__link.highlight-button:focus { transition-duration: 0.2s; background-color: #F0AB00; color: #004153; }
+
+a.mdl-navigation__link--current.highlight-button { border: 2px solid #F0AB00 !important; border-radius: 10px; padding: 0 17px; font-weight: 600; line-height: 32px; transition-duration: 0.2s; background-color: #F0AB00 !important; color: #004153 !important; }
+
+a.mdl-navigation__link--current.highlight-button:hover, a.mdl-navigation__link--current.highlight-button:active, a.mdl-navigation__link--current.highlight-button:focus { transition-duration: 0.2s; background-color: #F0AB00; color: #004153; }
+
+a.mdl-navigation__link.highlight-sidebar { font-weight: 600; transition-duration: 0.2s; background-color: #F4c44c !important; color: #004153 !important; }
+
+a.mdl-navigation__link.highlight-sidebar:hover, a.mdl-navigation__link.highlight-sidebar:active, a.mdl-navigation__link.highlight-sidebar:focus { transition-duration: 0.2s; background-color: #F0AB00 !important; color: #004153 !important; }
+
+a.mdl-navigation__link--current.highlight-sidebar { font-weight: 600; transition-duration: 0.2s; background-color: #F0AB00 !important; color: #004153 !important; }
+
+a.mdl-navigation__link--current.highlight-sidebar:hover, a.mdl-navigation__link--current.highlight-sidebar:active, a.mdl-navigation__link--current.highlight-sidebar:focus { transition-duration: 0.2s; background-color: #F0AB00 !important; color: #004153 !important; }
+
+/* a.mdl-navigation__link.highlight-button { background-color: $blue; color: $accent-yellow; border: 2px solid $accent-yellow !important; border-radius: 10px; padding: 0 17px; font-weight: 600; line-height: 32px; transition-duration: 0.2s; &:hover, &:active, &:focus { transition-duration: 0.2s; background-color: $accent-yellow; color: $blue; } } */
+
 /*# sourceMappingURL=styles.css.map */
