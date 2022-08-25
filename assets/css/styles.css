@@ -154,9 +154,9 @@ pre > code, table code { border: none; background-color: transparent; }
 
 .hljs-keyword, .hljs-selector-tag, .hljs-literal, .hljs-title, .hljs-section, .hljs-doctag, .hljs-type, .hljs-name, .hljs-literal, .hljs-number { color: #F0CA4D; }
 
-.blog-page, .post-page, .getting-started-page, .documentation { padding: 10px 20px; }
+.blog-page, .post-page, .getting-started-page, .documentation, .guides-page { padding: 10px 20px; }
 
-.blog-page a, .blog-page p, .post-page a, .post-page p, .getting-started-page a, .getting-started-page p, .documentation a, .documentation p { font-size: 18px; }
+.blog-page a, .blog-page p, .post-page a, .post-page p, .getting-started-page a, .getting-started-page p, .documentation a, .documentation p, .guides-page a, .guides-page p { font-size: 18px; }
 
 .getting-started-page h1, .documentation h1 { color: #004153 !important; font-size: 35px; font-weight: 600; }
 
@@ -257,6 +257,16 @@ body.post div.post-page .note, body.post div.post-page .colist { overflow: auto;
 .post-page .customer-logo { text-align: center; }
 
 @media screen and (max-width: 48em) { .blog-list-item .share-page, .post-page .share-page { text-align: left; } .blog-page p.byline { font-size: 1rem; line-height: 1.25rem; } .post-page, .blog-page { padding: 0px 10px; } }
+
+.guides-page h1 strong { color: #004153 !important; }
+
+.guides-page .guides-block, .guides-page .guides-description { text-align: center; }
+
+.guides-page .guides-block p, .guides-page .guides-description p { text-align: left; padding: 0 20px; font-size: 18px; }
+
+.guides-page .guides-block h3, .guides-page .guides-description h3 { line-height: initial; margin: 16px 0px 8px 0px; font-weight: 600; }
+
+.guides-page .guides-description p { text-align: center; }
 
 .community-page h1 strong { color: #004153 !important; }
 
