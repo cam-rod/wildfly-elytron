@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Elytron: Setting up WildFly Elytron on Windows</title>
+    <script src="/wildfly-elytron/assets/javascript/highlight.pack.js" type="text/javascript"></script>
+
+    <link rel="shortcut icon" type="image/png" href="/wildfly-elytron/favicon.ico">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- We override the colours from this theme manually -->
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <link rel="stylesheet" href="/wildfly-elytron/assets/css/styles.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <script src="/wildfly-elytron/assets/javascript/hl.js" type="text/javascript"></script>
+    <link rel="alternate" type="application/rss+xml"  href="/wildfly-elytron/feed.xml" title="WildFly Elytron">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-135301155-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-135301155-1');
+    </script>
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Setting up WildFly Elytron on Windows | WildFly Elytron</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Setting up WildFly Elytron on Windows" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://wildfly-security.github.io/wildfly-elytron/guides/setup-elytron-windows" />
+<meta property="og:url" content="https://wildfly-security.github.io/wildfly-elytron/guides/setup-elytron-windows" />
+<meta property="og:site_name" content="WildFly Elytron" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Setting up WildFly Elytron on Windows" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Setting up WildFly Elytron on Windows","url":"https://wildfly-security.github.io/wildfly-elytron/guides/setup-elytron-windows"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body>
+
+
+<!-- Always shows a header, even in smaller screens. -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mdl-layout__header mdl-layout__header--scroll">
+        <div class="mdl-layout__header-row ">
+            <!-- Title -->
+            <span class="mdl-layout-title"><h3>Wild<strong>Fly</strong>  Elytron</h3></span>
+            <!-- Add spacer, to align navigation to the right -->
+            <div class="mdl-layout-spacer"></div>
+            <nav class="mdl-navigation mdl-layout--large-screen-only">
+                
+                    
+                    
+                    
+                         <a class="mdl-navigation__link mdl-navigation__link--current highlight-button Setup Guide Demo-menuitem" href="/wildfly-elytron/guides/setup-elytron-windows/">Setup Guide Demo</a>
+                    
+                
+                    
+                    
+                    
+                         <a class="mdl-navigation__link Home-menuitem" href="/wildfly-elytron/">Home</a>
+                    
+                
+                    
+                    
+                    
+                         <a class="mdl-navigation__link Guides-menuitem" href="/wildfly-elytron/guides/">Guides</a>
+                    
+                
+                    
+                    
+                    
+                         <a class="mdl-navigation__link Docs-menuitem" href="/wildfly-elytron/docs/">Docs</a>
+                    
+                
+                    
+                    
+                    
+                         <a class="mdl-navigation__link Community-menuitem" href="/wildfly-elytron/community/">Community</a>
+                    
+                
+                    
+                    
+                    
+                         <a class="mdl-navigation__link Blog-menuitem" href="/wildfly-elytron/blog/">Blog</a>
+                    
+                
+                    
+                    
+                    
+                         <a class="mdl-navigation__link GitHub-menuitem" href="https://github.com/wildfly-security/wildfly-elytron">GitHub</a>
+                    
+                
+            </nav>
+        </div>
+    </header>
+    <div class="mdl-layout__drawer">
+        <div class="side-drawer-logo-container"><h3>Wild<strong>Fly</strong>  Elytron</h3></div>
+        <nav class="mdl-navigation">
+            
+            
+            
+            
+                <a class="mdl-navigation__link mdl-navigation__link--current highlight-sidebar Setup Guide Demo-menuitem" href="/wildfly-elytron/guides/setup-elytron-windows/">Setup Guide Demo</a>
+            
+            
+            
+            
+            
+                <a class="mdl-navigation__link Home-menuitem" href="/wildfly-elytron/">Home</a>
+            
+            
+            
+            
+            
+                <a class="mdl-navigation__link Guides-menuitem" href="/wildfly-elytron/guides/">Guides</a>
+            
+            
+            
+            
+            
+                <a class="mdl-navigation__link Docs-menuitem" href="/wildfly-elytron/docs/">Docs</a>
+            
+            
+            
+            
+            
+                <a class="mdl-navigation__link Community-menuitem" href="/wildfly-elytron/community/">Community</a>
+            
+            
+            
+            
+            
+                <a class="mdl-navigation__link Blog-menuitem" href="/wildfly-elytron/blog/">Blog</a>
+            
+            
+            
+            
+            
+                <a class="mdl-navigation__link GitHub-menuitem" href="https://github.com/wildfly-security/wildfly-elytron">GitHub</a>
+            
+            
+            <!-- mdl-navigation__link--current -->
+        </nav>
+    </div>
+    <main class="mdl-layout__content">
+        <div class="page-content">
+            
+            <div class="content">
+                <div class="setup-elytron setup-elytron-windows">
+    <h1>Setting up WildFly Elytron on Windows</h1>
+    <p><strong>Currently missing from this page</strong></p>
+
+<ul>
+  <li>The remaining images
+    <ul>
+      <li>Responsive image scaling for different screens</li>
+    </ul>
+  </li>
+  <li>Table of Contents</li>
+</ul>
+
+<p><strong>Other missing parts</strong></p>
+
+<ul>
+  <li>OSD homepage</li>
+  <li>Links from other pages to these guides, and vice versa</li>
+  <li>Setup guides for Linux and macOS</li>
+  <li>Larger OSD button for home page</li>
+  <li>Guides page
+    <ul>
+      <li>Updated subtext</li>
+      <li>OS icons</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="installing-java">Installing Java</h2>
+
+<ol>
+  <li>First, let’s check if you already have Java installed.
+    <ol>
+      <li>Open Command Prompt, and run <code class="language-plaintext highlighter-rouge">java --version</code>.</li>
+      <li>If the output shows a version number, check to make sure it is Java 11 (e.g., “11.0.15.1”). If so, Java 11 is already installed and you can jump to the <strong>Installing Maven</strong> section. If the output is not Java 11 or if the output is <code class="language-plaintext highlighter-rouge">'java' is not recognized as an internal or external command, operable program or batch file</code>, continue with the following steps.
+        <ol>
+          <li>If you encounter a message such as <code class="language-plaintext highlighter-rouge">Java was not found, run without arguments to install from the Microsoft Store.</code>, follow <a href="https://www.windowscentral.com/how-manage-app-execution-aliases-windows-10">these instructions</a> to disable the alias.</li>
+        </ol>
+      </li>
+      <li>Close the Command Prompt.</li>
+    </ol>
+  </li>
+  <li>Go to <a href="https://www.oracle.com/java/technologies/javase/jdk11-archive-downloads.html">this page</a> (or use your browser to search for “Download JDK 11”) and download the “x64 Installer”.</li>
+  <li>Run the file that you downloaded and note where it is being installed:
+ <img src="/wildfly-elytron/assets/images/setup-elytron/setup-elytron_windows_install-jdk.png" alt="Windows JDK installer" width="373px" />
+    <ol>
+      <li>Now open Command Prompt and run <code class="language-plaintext highlighter-rouge">java --version</code> once again. This time, the output should be something like (the exact version will depend on the version that was installed):
+        <div class="language-batch highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">java</span> <span class="kd">version</span> <span class="s2">"11.0.15.1"</span> <span class="m">2022</span><span class="o">-</span><span class="m">04</span><span class="o">-</span><span class="m">22</span> <span class="kd">LTS</span>
+<span class="kd">Java</span><span class="o">(</span><span class="kd">TM</span><span class="o">)</span> <span class="kd">SE</span> <span class="kd">Runtime</span> <span class="kd">Environment</span> <span class="m">18</span>.9 <span class="o">(</span><span class="kd">build</span> <span class="m">11</span>.0.15.1<span class="o">+</span><span class="m">2</span><span class="na">-LTS</span><span class="o">-</span><span class="m">10</span><span class="o">)</span>
+<span class="kd">Java</span> <span class="kd">HotSpot</span><span class="o">(</span><span class="kd">TM</span><span class="o">)</span> <span class="m">64</span><span class="na">-Bit </span><span class="kd">Server</span> <span class="kd">VM</span> <span class="m">18</span>.9 <span class="o">(</span><span class="kd">build</span> <span class="m">11</span>.0.15.1<span class="o">+</span><span class="m">2</span><span class="na">-LTS</span><span class="o">-</span><span class="m">10</span><span class="o">,</span> <span class="kd">mixed</span> <span class="nb">mode</span><span class="o">)</span>
+</code></pre></div>        </div>
+      </li>
+      <li>If you don’t see the output above, that means you’ll need to update your “Path”. To do so:
+        <ol>
+          <li>Search for “Edit the system environment variables” in your Start menu.</li>
+          <li>Click on “Environment Variables”.</li>
+          <li>
+            <p>Now double click the “Path” under “User variables for <code class="language-plaintext highlighter-rouge">&lt;Windows username&gt;</code>”. Then click “New” and enter the directory from the installer with “\bin” at the end. In this example, we’d need to add <em>C:\Program Files\Java\jdk-11.0.15.1\bin</em> to the “Path”.<br /></p>
+          </li>
+          <li>Click Ok to close all of the windows.</li>
+          <li>If you now close and re-open the Command Prompt, and run <code class="language-plaintext highlighter-rouge">java --version</code>, you should now successfully see the Java 11 version that was installed.</li>
+          <li>You can undo these changes later on by following the steps in the <strong>Temporary Configuration</strong> section.</li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+</ol>
+
+<h2 id="installing-maven">Installing Maven</h2>
+
+<ol>
+  <li>First, let’s check if you already have Maven installed.
+    <ol>
+      <li>Open Command Prompt, and run <code class="language-plaintext highlighter-rouge">mvn -v</code>.</li>
+      <li>If the output shows a version number, Maven is already installed and you can jump to the <strong>Installing Git</strong> section. If you get <code class="language-plaintext highlighter-rouge">'mvn' is not recognized as an internal or external command, operable program or batch file</code>, then continue with the following steps.</li>
+      <li>Close the Command Prompt.</li>
+    </ol>
+  </li>
+  <li>Go to <a href="https://maven.apache.org/download.cgi">this page</a> and download the latest Binary zip archive (e.g., <code class="language-plaintext highlighter-rouge">apache-maven-3.8.6-bin.zip</code>)</li>
+  <li>Extract the zip and make a note of where it was extracted (e.g., <em>C:\apache-maven-3.8.6</em>).</li>
+  <li>Add Maven to the “Path”:
+    <ol>
+      <li>Search for “Edit the system environment variables” in your Start menu.</li>
+      <li>Click on “Environment Variables”.</li>
+      <li>Now double click the “Path” under “User variables for <code class="language-plaintext highlighter-rouge">&lt;Windows username&gt;</code>”. Then click “New” and enter the directory from the installer with “\bin” at the end. In this example, we’d need to add <em>C:\apache-maven-3.8.6\bin</em>  to the “Path”.</li>
+      <li><img src="images/image4.png" alt="alt_text" title="image_tooltip" /> <img src="images/image5.png" alt="alt_text" title="image_tooltip" /></li>
+      <li>Now hit Ok until those windows all close</li>
+    </ol>
+  </li>
+  <li>If you now close and re-open the Command Prompt, and run <code class="language-plaintext highlighter-rouge">mvn -v</code>, you should now see the Maven version as shown here:</li>
+</ol>
+
+<div class="language-batch highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">Apache</span> <span class="kd">Maven</span> <span class="m">3</span>.8.6 <span class="o">(</span><span class="m">84538</span><span class="kd">c9988a25aec085021c365c560670ad80f63</span><span class="o">)</span>
+<span class="kd">Maven</span> <span class="kd">home</span>: <span class="kd">C</span>:\apache<span class="na">-maven</span><span class="o">-</span><span class="m">3</span>.8.6
+<span class="kd">Java</span> <span class="kd">version</span>: <span class="m">11</span>.0.15.1<span class="o">,</span> <span class="kd">vendor</span>: <span class="kd">Oracle</span> <span class="kd">Corporation</span><span class="o">,</span> <span class="kd">runtime</span>: <span class="kd">C</span>:\Program <span class="kd">Files</span>\Java\jdk<span class="o">-</span><span class="m">11</span>.0.15.1
+<span class="kd">Default</span> <span class="kd">locale</span>: <span class="kd">en_CA</span><span class="o">,</span> <span class="kd">platform</span> <span class="kd">encoding</span>: <span class="kd">Cp1252</span>
+<span class="kd">OS</span> <span class="kd">name</span>: <span class="s2">"windows 10"</span><span class="o">,</span> <span class="kd">version</span>: <span class="s2">"10.0"</span><span class="o">,</span> <span class="kd">arch</span>: <span class="s2">"amd64"</span><span class="o">,</span> <span class="kd">family</span>: <span class="s2">"windows"</span><span class="sb">`
+</span></code></pre></div></div>
+
+<h2 id="installing-git">Installing Git</h2>
+
+<ol>
+  <li>First, let’s check if you already have Git installed.
+    <ol>
+      <li>Open Command Prompt, and run <code class="language-plaintext highlighter-rouge">git --version</code>.</li>
+      <li>If the output shows a version number, Git is already installed and you can jump to the <strong>Cloning WildFly Elytron</strong> section. If you get <code class="language-plaintext highlighter-rouge">'git' is not recognized as an internal or external command, operable program or batch file</code>, then continue with the following steps.
+        <ol>
+          <li>If you encounter a message such as <code class="language-plaintext highlighter-rouge">Maven was not found, run without arguments to install from the Microsoft Store.</code>, follow <a href="https://www.windowscentral.com/how-manage-app-execution-aliases-windows-10">these instructions</a> to disable the alias.</li>
+        </ol>
+      </li>
+      <li>You can now close Command Prompt.</li>
+    </ol>
+  </li>
+  <li>Go to <a href="https://git-scm.com/download/win">this page</a> and download the latest Windows version.</li>
+  <li>Run the installer and don’t change any of the options while configuring.</li>
+  <li>Once the installation is complete, you should be able to open a Command Prompt and once again run <code class="language-plaintext highlighter-rouge">git --version</code>. This time, the output should look something like this:
+    <div class="language-batch highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">git</span> <span class="kd">version</span> <span class="m">2</span>.37.1.windows.1
+</code></pre></div>    </div>
+  </li>
+  <li>If you already had any IDEs open before, close and reopen them now to load your changes.</li>
+</ol>
+
+<h2 id="cloning-wildfly-elytron">Cloning WildFly Elytron</h2>
+
+<ol>
+  <li>First, you’ll need a GitHub account. If you don’t already have one, sign up for one at <a href="https://github.com/">github.com</a>.</li>
+  <li>Fork the <a href="https://github.com/wildfly-security/wildfly-elytron">WildFly Elytron project</a> into your GitHub account by clicking on the “Fork” button at the top right.</li>
+</ol>
+
+<p><img src="images/image6.png" alt="alt_text" title="image_tooltip" /></p>
+
+<ol>
+  <li>Now go to your fork of the repository, the URL will be: <code class="language-plaintext highlighter-rouge">https://github.com/&lt;USERNAME&gt;/wildfly-elytron</code>. Replace <code class="language-plaintext highlighter-rouge">&lt;USERNAME&gt;</code> with your GitHub username.</li>
+  <li>At the top right, you’ll see there is a green “Code” button. Click on that, and for the easiest setup choose the “HTTPS” tab. Click on the button next to the URL to copy it.</li>
+</ol>
+
+<p><img src="images/image7.png" alt="alt_text" title="image_tooltip" /></p>
+
+<ol>
+  <li>Open your Command Prompt and navigate to the directory where you want to clone this project. Then enter <code class="language-plaintext highlighter-rouge">git clone &lt;URL&gt;</code> and replace <code class="language-plaintext highlighter-rouge">&lt;URL&gt;</code> with the URL you copied in step 4.</li>
+  <li>Now you should see a directory called <code class="language-plaintext highlighter-rouge">wildfly-elytron</code> that contains the code for the WildFly Elytron project.</li>
+</ol>
+
+<h2 id="building-wildfly-elytron">Building WildFly Elytron</h2>
+
+<ol>
+  <li>Open a Command Prompt</li>
+  <li>Navigate to the <code class="language-plaintext highlighter-rouge">wildfly-elytron</code> project directory and run <code class="language-plaintext highlighter-rouge">mvn clean install</code>. This will build the project.</li>
+</ol>
+
+<h2 id="optional-temporary-configuration">[OPTIONAL] Temporary Configuration</h2>
+
+<p>If you want to undo the changes to the default Java version, you can remove the modifications after you finish:</p>
+
+<h3 id="java">Java</h3>
+
+<ol>
+  <li>Search for “Edit the system environment variables” in your Start menu.</li>
+  <li>Click on “Environment Variables”.</li>
+  <li>Now double click the “Path” under “User variables for <code class="language-plaintext highlighter-rouge">&lt;Windows username&gt;</code>”. Then select <em>C:\Program Files\Java\jdk-11.0.15.1\bin</em> in the entries and click Delete.</li>
+</ol>
+
+<p><img src="images/image8.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p><img src="images/image9.png" alt="alt_text" title="image_tooltip" /></p>
+
+<ol>
+  <li>Click Ok to close all of the windows.</li>
+  <li>If you now close and re-open the Command Prompt, and run <code class="language-plaintext highlighter-rouge">java --version</code>, the original message should now appear.</li>
+</ol>
+
+<h3 id="maven">Maven</h3>
+
+<ol>
+  <li>Search for “Edit the system environment variables” in your Start menu.</li>
+  <li>Click on “Environment Variables”.</li>
+  <li>Now double click the “Path” under “User variables for <code class="language-plaintext highlighter-rouge">&lt;Windows username&gt;</code>”. Then select <em>C:\apache-maven-3.8.6\bin</em> in the entries and click Delete.</li>
+</ol>
+
+<p><img src="images/image10.png" alt="alt_text" title="image_tooltip" /></p>
+
+<p><img src="images/image11.png" alt="alt_text" title="image_tooltip" /></p>
+
+<ol>
+  <li>Now hit Ok until those windows all close</li>
+  <li>If you now close and re-open the Command Prompt, and run “<code class="language-plaintext highlighter-rouge">java --version</code>”, the previous message should now appear.</li>
+</ol>
+
+<h3 id="advanced-session-configuration-only">[ADVANCED] Session configuration only</h3>
+
+<p>You can only set the changes for the current Command Prompt by adding Java to the PATH directly from the shell:
+<code class="language-plaintext highlighter-rouge">SET PATH=%PATH%;c:\whatever\else</code>. However, these will reset to their original values once the Command Prompt window/tab is closed, and won’t be available to any programs not launched by the prompt (like an IDE). <strong><em>Only use this method if you understand the implications.</em></strong></p>
+
+</div>
+            </div>
+        </div>
+    </main>
+</div>
+</body>
+</html>
