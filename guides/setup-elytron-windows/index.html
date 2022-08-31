@@ -57,9 +57,11 @@
                     
                     
                     
-                         <a class="mdl-navigation__link mdl-navigation__link--current highlight-button Setup Guide Demo-menuitem" href="/wildfly-elytron/guides/setup-elytron-windows/">Setup Guide Demo</a>
+                    
+                         <a class="mdl-navigation__link highlight-button Setup Guide Demo-menuitem" href="/wildfly-elytron/guides/">Setup Guide Demo</a>
                     
                 
+                    
                     
                     
                     
@@ -69,9 +71,11 @@
                     
                     
                     
+                    
                          <a class="mdl-navigation__link Guides-menuitem" href="/wildfly-elytron/guides/">Guides</a>
                     
                 
+                    
                     
                     
                     
@@ -81,15 +85,18 @@
                     
                     
                     
+                    
                          <a class="mdl-navigation__link Community-menuitem" href="/wildfly-elytron/community/">Community</a>
                     
                 
                     
                     
                     
+                    
                          <a class="mdl-navigation__link Blog-menuitem" href="/wildfly-elytron/blog/">Blog</a>
                     
                 
+                    
                     
                     
                     
@@ -106,7 +113,9 @@
             
             
             
-                <a class="mdl-navigation__link mdl-navigation__link--current highlight-sidebar Setup Guide Demo-menuitem" href="/wildfly-elytron/guides/setup-elytron-windows/">Setup Guide Demo</a>
+            
+                <a class="mdl-navigation__link mdl-navigation__link--current highlight-sidebar Setup Guide Demo-menuitem" href="/wildfly-elytron/guides/">Setup Guide Demo</a>
+            
             
             
             
@@ -118,7 +127,9 @@
             
             
             
+            
                 <a class="mdl-navigation__link Guides-menuitem" href="/wildfly-elytron/guides/">Guides</a>
+            
             
             
             
@@ -130,13 +141,16 @@
             
             
             
+            
                 <a class="mdl-navigation__link Community-menuitem" href="/wildfly-elytron/community/">Community</a>
             
             
             
             
             
+            
                 <a class="mdl-navigation__link Blog-menuitem" href="/wildfly-elytron/blog/">Blog</a>
+            
             
             
             
@@ -154,7 +168,27 @@
             <div class="content">
                 <div class="setup-elytron setup-elytron-windows">
     <h1>Setting up WildFly Elytron on Windows</h1>
-    <div class="sect1">
+    <div class="paragraph">
+<p>This page will guide you through the steps needed to setup a development environment for WildFly Elytron on Windows.</p>
+</div>
+<div id="toc" class="toc">
+<div id="toctitle" class="title"></div>
+<ul class="sectlevel1">
+<li><a href="#installing-java">Installing Java</a></li>
+<li><a href="#installing-maven">Installing Maven</a></li>
+<li><a href="#installing-git">Installing Git</a></li>
+<li><a href="#cloning-wildfly-elytron">Cloning WildFly Elytron</a></li>
+<li><a href="#building-wildfly-elytron">Building WildFly Elytron</a></li>
+<li><a href="#optional-temporary-configuration"><em>[OPTIONAL] Temporary Configuration</em></a>
+<ul class="sectlevel2">
+<li><a href="#java"><em>Java</em></a></li>
+<li><a href="#maven"><em>Maven</em></a></li>
+<li><a href="#advanced-session-configuration-only"><em>[ADVANCED] Session configuration only</em></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="sect1">
 <h2 id="installing-java"><a class="anchor" href="#installing-java"></a>Installing Java</h2>
 <div class="sectionbody">
 <div class="olist arabic">
@@ -356,7 +390,7 @@ OS name: "windows 10", version: "10.0", arch: "amd64", family: "windows"</code><
 </li>
 <li>
 <p>Fork the <a href="https://github.com/wildfly-security/wildfly-elytron">WildFly Elytron project</a> into your GitHub account by clicking on the "Fork" button at the top right.</p>
-<div class="imageblock responsive-img_capped_50-mobile text-center">
+<div class="imageblock responsive-img_capped_50-width text-center">
 <div class="content">
 <img src="../../assets/images/setup-elytron/setup-elytron_fork-repo.png" alt="Screenshot of buttons at top of wildfly-elytron repo, including &quot;Fork&quot; button">
 </div>
@@ -402,10 +436,26 @@ OS name: "windows 10", version: "10.0", arch: "amd64", family: "windows"</code><
 <h2 id="optional-temporary-configuration"><a class="anchor" href="#optional-temporary-configuration"></a><em>[OPTIONAL] Temporary Configuration</em></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>If you want to undo the changes to the default Java version, you can remove the modifications after you finish:</p>
+<p>If you want to undo the changes to the default Java version, you can remove the modifications after you finish. We will not uninstall the programs, in case you want to use them later, but this can be done as follows:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open the Start menu, and click the Settings icon.</p>
+</li>
+<li>
+<p>Select "System", then "Apps &amp; features".</p>
+</li>
+<li>
+<p>Scroll down until you see the program (ex. Maven, OpenJDK), and click on it.</p>
+</li>
+<li>
+<p>Click the "Uninstall" button (sometimes "Uninstall/Repair"), and follows the prompts.</p>
+</li>
+</ol>
 </div>
 <div class="sect2">
-<h3 id="java"><a class="anchor" href="#java"></a>Java</h3>
+<h3 id="java"><a class="anchor" href="#java"></a><em>Java</em></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -429,7 +479,7 @@ OS name: "windows 10", version: "10.0", arch: "amd64", family: "windows"</code><
 </div>
 </div>
 <div class="sect2">
-<h3 id="maven"><a class="anchor" href="#maven"></a>Maven</h3>
+<h3 id="maven"><a class="anchor" href="#maven"></a><em>Maven</em></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -453,7 +503,7 @@ OS name: "windows 10", version: "10.0", arch: "amd64", family: "windows"</code><
 </div>
 </div>
 <div class="sect2">
-<h3 id="advanced-session-configuration-only"><a class="anchor" href="#advanced-session-configuration-only"></a>[ADVANCED] Session configuration only</h3>
+<h3 id="advanced-session-configuration-only"><a class="anchor" href="#advanced-session-configuration-only"></a><em>[ADVANCED] Session configuration only</em></h3>
 <div class="paragraph">
 <p>You can only set the changes for the current Command Prompt by adding Java to the PATH directly from the shell: <code>SET PATH=%PATH%;C:\path\to\Java\bin</code></p>
 </div>

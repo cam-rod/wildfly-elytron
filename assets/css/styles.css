@@ -194,13 +194,13 @@ td.content > .title, .audioblock > .title, .exampleblock > .title, .imageblock >
 
 @media screen and (min-width: 3000px) { .responsive-img_capped > .content > img, span.responsive-img_capped > img { max-width: 100%; width: 15vw; } }
 
-.responsive-img_capped_50-mobile > .content > img, span.responsive-img_50-mobile > img { max-width: 100%; width: 50vw; }
+.responsive-img_capped_50-width > .content > img, span.responsive-img_50-mobile > img { max-width: 100%; width: 50vw; }
 
-@media screen and (max-width: 1024px) { .responsive-img_capped_50-mobile > .content > img, span.responsive-img_50-mobile > img { max-width: 100%; width: 100vw; } }
+@media screen and (max-width: 1024px) { .responsive-img_capped_50-width > .content > img, span.responsive-img_50-mobile > img { max-width: 100%; width: 100vw; } }
 
-@media screen and (min-width: 2100px) { .responsive-img_capped_50-mobile > .content > img, span.responsive-img_50-mobile > img { max-width: 100%; width: 40vw; } }
+@media screen and (min-width: 2100px) { .responsive-img_capped_50-width > .content > img, span.responsive-img_50-mobile > img { max-width: 100%; width: 40vw; } }
 
-@media screen and (min-width: 3000px) { .responsive-img_capped_50-mobile > .content > img, span.responsive-img_50-mobile > img { max-width: 100%; width: 35vw; } }
+@media screen and (min-width: 3000px) { .responsive-img_capped_50-width > .content > img, span.responsive-img_50-mobile > img { max-width: 100%; width: 35vw; } }
 
 .grid-wrapper { display: grid; grid-template-columns: repeat(12, 1fr); grid-gap: 1em; clear: both; }
 
