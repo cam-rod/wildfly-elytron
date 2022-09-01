@@ -298,6 +298,7 @@ body.post div.post-page .note, body.post div.post-page .colist { overflow: auto;
 
 .share-page .fa-linkedin, .share-page .fa-twitter-square, .share-page .fa-facebook-square, .share-page .fa-reddit-square, .share-page .fa-envelope-square { font-size: 2rem; max-width: 1.5rem; margin-right: .5rem; color: #004153 !important; }
 
+/* Navigation buttons */
 a.mdl-navigation__link.highlight-button, a:not(.mdl-navigation__link) strong.mdl-navigation__link.highlight-button, a:not(.mdl-navigation__link) em.mdl-navigation__link.highlight-button { border: 2px solid #F0AB00 !important; border-radius: 10px; padding: 0 17px; font-weight: 600; line-height: 32px; transition-duration: 0.2s; background-color: #004153; color: #F0AB00; }
 
 a.mdl-navigation__link.highlight-button:hover, a:not(.mdl-navigation__link) strong.mdl-navigation__link.highlight-button:hover, a:not(.mdl-navigation__link) em.mdl-navigation__link.highlight-button:hover, a.mdl-navigation__link.highlight-button:active, a:not(.mdl-navigation__link) strong.mdl-navigation__link.highlight-button:active, a:not(.mdl-navigation__link) em.mdl-navigation__link.highlight-button:active, a.mdl-navigation__link.highlight-button:focus, a:not(.mdl-navigation__link) strong.mdl-navigation__link.highlight-button:focus, a:not(.mdl-navigation__link) em.mdl-navigation__link.highlight-button:focus { transition-duration: 0.2s; background-color: #F0AB00; color: #004153; }
@@ -314,6 +315,21 @@ a.mdl-navigation__link--current.highlight-sidebar, a:not(.mdl-navigation__link) 
 
 a.mdl-navigation__link--current.highlight-sidebar:hover, a:not(.mdl-navigation__link) strong.mdl-navigation__link--current.highlight-sidebar:hover, a:not(.mdl-navigation__link) em.mdl-navigation__link--current.highlight-sidebar:hover, a.mdl-navigation__link--current.highlight-sidebar:active, a:not(.mdl-navigation__link) strong.mdl-navigation__link--current.highlight-sidebar:active, a:not(.mdl-navigation__link) em.mdl-navigation__link--current.highlight-sidebar:active, a.mdl-navigation__link--current.highlight-sidebar:focus, a:not(.mdl-navigation__link) strong.mdl-navigation__link--current.highlight-sidebar:focus, a:not(.mdl-navigation__link) em.mdl-navigation__link--current.highlight-sidebar:focus { transition-duration: 0.2s; background-color: #F0AB00 !important; color: #004153 !important; }
 
-/* a.mdl-navigation__link.highlight-button { background-color: $blue; color: $accent-yellow; border: 2px solid $accent-yellow !important; border-radius: 10px; padding: 0 17px; font-weight: 600; line-height: 32px; transition-duration: 0.2s; &:hover, &:active, &:focus { transition-duration: 0.2s; background-color: $accent-yellow; color: $blue; } } */
+/* MDL chip button */
+div.highlight-chip { margin: 24px 6px 0px 6px; text-align: center; max-width: 100%; }
+
+div.highlight-chip button.mdl-chip { background-color: #F0AB00; max-width: 100%; }
+
+div.highlight-chip button.mdl-chip:hover { outline: 0; box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12); }
+
+div.highlight-chip button.mdl-chip:active { background-color: #f8b308; box-shadow: none; }
+
+div.highlight-chip button.mdl-chip span { color: #004153; font-size: 18px; font-weight: 500; }
+
+div.highlight-chip button.mdl-chip.highlight-chip_tiny, div.highlight-chip button.mdl-chip.highlight-chip_large { display: none; }
+
+@media screen and (min-width: 650px) { div.highlight-chip button.mdl-chip.highlight-chip_tiny, div.highlight-chip button.mdl-chip.highlight-chip_small { display: none; } div.highlight-chip button.mdl-chip.highlight-chip_large { display: initial; } }
+
+@media screen and (max-width: 350px) { div.highlight-chip button.mdl-chip.highlight-chip_small, div.highlight-chip button.mdl-chip.highlight-chip_large { display: none; } div.highlight-chip button.mdl-chip.highlight-chip_tiny { display: initial; } }
 
 /*# sourceMappingURL=styles.css.map */
