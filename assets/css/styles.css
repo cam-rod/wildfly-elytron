@@ -20,7 +20,7 @@ h4 { font-size: 18px; }
 
 h5 { font-size: 16px; }
 
-a:not(.mdl-navigation__link) { color: #004153 !important; }
+a:not(.mdl-navigation__link), a:not(.mdl-navigation__link) strong:not(.mdl-navigation__link), a:not(.mdl-navigation__link) em:not(.mdl-navigation__link) { color: #004153 !important; }
 
 .mdl-navigation { padding-top: 0px !important; }
 
@@ -110,25 +110,25 @@ a:not(.mdl-navigation__link) { color: #004153 !important; }
 
 @media screen and (max-width: 768px) { .hide-mobile { display: none; } }
 
-.paginator-btns a { margin: 1rem 0; }
+.paginator-btns a, .paginator-btns a:not(.mdl-navigation__link) strong, a:not(.mdl-navigation__link) .paginator-btns strong, .paginator-btns a:not(.mdl-navigation__link) em, a:not(.mdl-navigation__link) .paginator-btns em { margin: 1rem 0; }
 
-@media screen and (max-width: 768px) { .paginator-btns a { display: block; } }
+@media screen and (max-width: 768px) { .paginator-btns a, .paginator-btns a:not(.mdl-navigation__link) strong, a:not(.mdl-navigation__link) .paginator-btns strong, .paginator-btns a:not(.mdl-navigation__link) em, a:not(.mdl-navigation__link) .paginator-btns em { display: block; } }
 
-a.button-cta { text-align: center; color: #FFF !important; background-color: #004153 !important; border: 2px solid; text-transform: uppercase; text-decoration: none; padding: 12px 40px; white-space: nowrap; line-height: 3.5; transition: background .2s ease-in 0s; }
+a.button-cta, a:not(.mdl-navigation__link) strong.button-cta, a:not(.mdl-navigation__link) em.button-cta { text-align: center; color: #FFF !important; background-color: #004153 !important; border: 2px solid; text-transform: uppercase; text-decoration: none; padding: 12px 40px; white-space: nowrap; line-height: 3.5; transition: background .2s ease-in 0s; }
 
-a.button-cta:hover, a.button-cta:active, a.button-cta:focus { background-color: #8EC0D5 !important; border-color: #8EC0D5 !important; color: #004153 !important; }
+a.button-cta:hover, a:not(.mdl-navigation__link) strong.button-cta:hover, a:not(.mdl-navigation__link) em.button-cta:hover, a.button-cta:active, a:not(.mdl-navigation__link) strong.button-cta:active, a:not(.mdl-navigation__link) em.button-cta:active, a.button-cta:focus, a:not(.mdl-navigation__link) strong.button-cta:focus, a:not(.mdl-navigation__link) em.button-cta:focus { background-color: #8EC0D5 !important; border-color: #8EC0D5 !important; color: #004153 !important; }
 
-@media screen and (max-width: 768px) { a.button-cta { line-height: 1.5; } }
+@media screen and (max-width: 768px) { a.button-cta, a:not(.mdl-navigation__link) strong.button-cta, a:not(.mdl-navigation__link) em.button-cta { line-height: 1.5; } }
 
-a.button-cta.secondary { background: none; border: 2px solid; }
+a.button-cta.secondary, a:not(.mdl-navigation__link) strong.button-cta.secondary, a:not(.mdl-navigation__link) em.button-cta.secondary { background: none; border: 2px solid; }
 
-a.button-cta.secondary:hover, a.button-cta.secondary:active, a.button-cta.secondary:focus { background-color: #8EC0D5 !important; border-color: #8EC0D5 !important; color: #004153 !important; }
+a.button-cta.secondary:hover, a:not(.mdl-navigation__link) strong.button-cta.secondary:hover, a:not(.mdl-navigation__link) em.button-cta.secondary:hover, a.button-cta.secondary:active, a:not(.mdl-navigation__link) strong.button-cta.secondary:active, a:not(.mdl-navigation__link) em.button-cta.secondary:active, a.button-cta.secondary:focus, a:not(.mdl-navigation__link) strong.button-cta.secondary:focus, a:not(.mdl-navigation__link) em.button-cta.secondary:focus { background-color: #8EC0D5 !important; border-color: #8EC0D5 !important; color: #004153 !important; }
 
 pre, pre span { color: #be9100; }
 
 code, pre, pre span { background-color: inherit; padding: 0; font-family: 'Roboto Mono', monospace; font-size: 16px; white-space: pre-wrap; }
 
-code a, pre a, pre span a { text-decoration: none; color: inherit; font: inherit; }
+code a, code a:not(.mdl-navigation__link) strong, a:not(.mdl-navigation__link) code strong, code a:not(.mdl-navigation__link) em, a:not(.mdl-navigation__link) code em, pre a, pre a:not(.mdl-navigation__link) strong, a:not(.mdl-navigation__link) pre strong, pre a:not(.mdl-navigation__link) em, a:not(.mdl-navigation__link) pre em, pre span a { text-decoration: none; color: inherit; font: inherit; }
 
 pre { background: #282a36; overflow: inherit; padding: 0; }
 
@@ -156,7 +156,7 @@ pre > code, table code { border: none; background-color: transparent; }
 
 .blog-page, .post-page, .getting-started-page, .documentation, .guides-page, .setup-elytron { padding: 10px 20px; }
 
-.blog-page a, .blog-page p, .post-page a, .post-page p, .getting-started-page a, .getting-started-page p, .documentation a, .documentation p, .guides-page a, .guides-page p, .setup-elytron a, .setup-elytron p { font-size: 18px; }
+.blog-page a, .blog-page a:not(.mdl-navigation__link) strong, a:not(.mdl-navigation__link) .blog-page strong, .blog-page a:not(.mdl-navigation__link) em, a:not(.mdl-navigation__link) .blog-page em, .blog-page p, .post-page a, .post-page a:not(.mdl-navigation__link) strong, a:not(.mdl-navigation__link) .post-page strong, .post-page a:not(.mdl-navigation__link) em, a:not(.mdl-navigation__link) .post-page em, .post-page p, .getting-started-page a, .getting-started-page a:not(.mdl-navigation__link) strong, a:not(.mdl-navigation__link) .getting-started-page strong, .getting-started-page a:not(.mdl-navigation__link) em, a:not(.mdl-navigation__link) .getting-started-page em, .getting-started-page p, .documentation a, .documentation a:not(.mdl-navigation__link) strong, a:not(.mdl-navigation__link) .documentation strong, .documentation a:not(.mdl-navigation__link) em, a:not(.mdl-navigation__link) .documentation em, .documentation p, .guides-page a, .guides-page a:not(.mdl-navigation__link) strong, a:not(.mdl-navigation__link) .guides-page strong, .guides-page a:not(.mdl-navigation__link) em, a:not(.mdl-navigation__link) .guides-page em, .guides-page p, .setup-elytron a, .setup-elytron a:not(.mdl-navigation__link) strong, a:not(.mdl-navigation__link) .setup-elytron strong, .setup-elytron a:not(.mdl-navigation__link) em, a:not(.mdl-navigation__link) .setup-elytron em, .setup-elytron p { font-size: 18px; }
 
 .getting-started-page h1, .setup-elytron h1, .documentation h1 { color: #004153 !important; font-size: 35px; font-weight: 600; }
 
@@ -240,7 +240,7 @@ body.post div.post-page .note, body.post div.post-page .colist { overflow: auto;
 
 .blog-page .blog-list-item .tags { font-size: 1em; }
 
-.blog-page .blog-list-item .post-title a { font-size: 1.8rem; text-decoration: none; }
+.blog-page .blog-list-item .post-title a, .blog-page .blog-list-item .post-title a:not(.mdl-navigation__link) strong, a:not(.mdl-navigation__link) .blog-page .blog-list-item .post-title strong, .blog-page .blog-list-item .post-title a:not(.mdl-navigation__link) em, a:not(.mdl-navigation__link) .blog-page .blog-list-item .post-title em { font-size: 1.8rem; text-decoration: none; }
 
 .blog-page .fa-rss-square { font-size: 2rem; color: #ee802f; float: right; }
 
@@ -292,27 +292,27 @@ body.post div.post-page .note, body.post div.post-page .colist { overflow: auto;
 
 .community-page .community-block h3 { line-height: initial; margin: 16px 0px 8px 0px; font-weight: 600; }
 
-.share-page a { text-decoration: none; }
+.share-page a, .share-page a:not(.mdl-navigation__link) strong, a:not(.mdl-navigation__link) .share-page strong, .share-page a:not(.mdl-navigation__link) em, a:not(.mdl-navigation__link) .share-page em { text-decoration: none; }
 
-.share-page a img { max-width: 1.5rem; margin-right: .5rem; }
+.share-page a img, a:not(.mdl-navigation__link) .share-page strong img, a:not(.mdl-navigation__link) .share-page em img { max-width: 1.5rem; margin-right: .5rem; }
 
 .share-page .fa-linkedin, .share-page .fa-twitter-square, .share-page .fa-facebook-square, .share-page .fa-reddit-square, .share-page .fa-envelope-square { font-size: 2rem; max-width: 1.5rem; margin-right: .5rem; color: #004153 !important; }
 
-a.mdl-navigation__link.highlight-button { border: 2px solid #F0AB00 !important; border-radius: 10px; padding: 0 17px; font-weight: 600; line-height: 32px; transition-duration: 0.2s; background-color: #004153; color: #F0AB00; }
+a.mdl-navigation__link.highlight-button, a:not(.mdl-navigation__link) strong.mdl-navigation__link.highlight-button, a:not(.mdl-navigation__link) em.mdl-navigation__link.highlight-button { border: 2px solid #F0AB00 !important; border-radius: 10px; padding: 0 17px; font-weight: 600; line-height: 32px; transition-duration: 0.2s; background-color: #004153; color: #F0AB00; }
 
-a.mdl-navigation__link.highlight-button:hover, a.mdl-navigation__link.highlight-button:active, a.mdl-navigation__link.highlight-button:focus { transition-duration: 0.2s; background-color: #F0AB00; color: #004153; }
+a.mdl-navigation__link.highlight-button:hover, a:not(.mdl-navigation__link) strong.mdl-navigation__link.highlight-button:hover, a:not(.mdl-navigation__link) em.mdl-navigation__link.highlight-button:hover, a.mdl-navigation__link.highlight-button:active, a:not(.mdl-navigation__link) strong.mdl-navigation__link.highlight-button:active, a:not(.mdl-navigation__link) em.mdl-navigation__link.highlight-button:active, a.mdl-navigation__link.highlight-button:focus, a:not(.mdl-navigation__link) strong.mdl-navigation__link.highlight-button:focus, a:not(.mdl-navigation__link) em.mdl-navigation__link.highlight-button:focus { transition-duration: 0.2s; background-color: #F0AB00; color: #004153; }
 
-a.mdl-navigation__link--current.highlight-button { border: 2px solid #F0AB00 !important; border-radius: 10px; padding: 0 17px; font-weight: 600; line-height: 32px; transition-duration: 0.2s; background-color: #F0AB00 !important; color: #004153 !important; }
+a.mdl-navigation__link--current.highlight-button, a:not(.mdl-navigation__link) strong.mdl-navigation__link--current.highlight-button, a:not(.mdl-navigation__link) em.mdl-navigation__link--current.highlight-button { border: 2px solid #F0AB00 !important; border-radius: 10px; padding: 0 17px; font-weight: 600; line-height: 32px; transition-duration: 0.2s; background-color: #F0AB00 !important; color: #004153 !important; }
 
-a.mdl-navigation__link--current.highlight-button:hover, a.mdl-navigation__link--current.highlight-button:active, a.mdl-navigation__link--current.highlight-button:focus { transition-duration: 0.2s; background-color: #F0AB00; color: #004153; }
+a.mdl-navigation__link--current.highlight-button:hover, a:not(.mdl-navigation__link) strong.mdl-navigation__link--current.highlight-button:hover, a:not(.mdl-navigation__link) em.mdl-navigation__link--current.highlight-button:hover, a.mdl-navigation__link--current.highlight-button:active, a:not(.mdl-navigation__link) strong.mdl-navigation__link--current.highlight-button:active, a:not(.mdl-navigation__link) em.mdl-navigation__link--current.highlight-button:active, a.mdl-navigation__link--current.highlight-button:focus, a:not(.mdl-navigation__link) strong.mdl-navigation__link--current.highlight-button:focus, a:not(.mdl-navigation__link) em.mdl-navigation__link--current.highlight-button:focus { transition-duration: 0.2s; background-color: #F0AB00; color: #004153; }
 
-a.mdl-navigation__link.highlight-sidebar { font-weight: 600; transition-duration: 0.2s; background-color: #F4c44c !important; color: #004153 !important; }
+a.mdl-navigation__link.highlight-sidebar, a:not(.mdl-navigation__link) strong.mdl-navigation__link.highlight-sidebar, a:not(.mdl-navigation__link) em.mdl-navigation__link.highlight-sidebar { font-weight: 600; transition-duration: 0.2s; background-color: #F4c44c !important; color: #004153 !important; }
 
-a.mdl-navigation__link.highlight-sidebar:hover, a.mdl-navigation__link.highlight-sidebar:active, a.mdl-navigation__link.highlight-sidebar:focus { transition-duration: 0.2s; background-color: #F0AB00 !important; color: #004153 !important; }
+a.mdl-navigation__link.highlight-sidebar:hover, a:not(.mdl-navigation__link) strong.mdl-navigation__link.highlight-sidebar:hover, a:not(.mdl-navigation__link) em.mdl-navigation__link.highlight-sidebar:hover, a.mdl-navigation__link.highlight-sidebar:active, a:not(.mdl-navigation__link) strong.mdl-navigation__link.highlight-sidebar:active, a:not(.mdl-navigation__link) em.mdl-navigation__link.highlight-sidebar:active, a.mdl-navigation__link.highlight-sidebar:focus, a:not(.mdl-navigation__link) strong.mdl-navigation__link.highlight-sidebar:focus, a:not(.mdl-navigation__link) em.mdl-navigation__link.highlight-sidebar:focus { transition-duration: 0.2s; background-color: #F0AB00 !important; color: #004153 !important; }
 
-a.mdl-navigation__link--current.highlight-sidebar { font-weight: 600; transition-duration: 0.2s; background-color: #F0AB00 !important; color: #004153 !important; }
+a.mdl-navigation__link--current.highlight-sidebar, a:not(.mdl-navigation__link) strong.mdl-navigation__link--current.highlight-sidebar, a:not(.mdl-navigation__link) em.mdl-navigation__link--current.highlight-sidebar { font-weight: 600; transition-duration: 0.2s; background-color: #F0AB00 !important; color: #004153 !important; }
 
-a.mdl-navigation__link--current.highlight-sidebar:hover, a.mdl-navigation__link--current.highlight-sidebar:active, a.mdl-navigation__link--current.highlight-sidebar:focus { transition-duration: 0.2s; background-color: #F0AB00 !important; color: #004153 !important; }
+a.mdl-navigation__link--current.highlight-sidebar:hover, a:not(.mdl-navigation__link) strong.mdl-navigation__link--current.highlight-sidebar:hover, a:not(.mdl-navigation__link) em.mdl-navigation__link--current.highlight-sidebar:hover, a.mdl-navigation__link--current.highlight-sidebar:active, a:not(.mdl-navigation__link) strong.mdl-navigation__link--current.highlight-sidebar:active, a:not(.mdl-navigation__link) em.mdl-navigation__link--current.highlight-sidebar:active, a.mdl-navigation__link--current.highlight-sidebar:focus, a:not(.mdl-navigation__link) strong.mdl-navigation__link--current.highlight-sidebar:focus, a:not(.mdl-navigation__link) em.mdl-navigation__link--current.highlight-sidebar:focus { transition-duration: 0.2s; background-color: #F0AB00 !important; color: #004153 !important; }
 
 /* a.mdl-navigation__link.highlight-button { background-color: $blue; color: $accent-yellow; border: 2px solid $accent-yellow !important; border-radius: 10px; padding: 0 17px; font-weight: 600; line-height: 32px; transition-duration: 0.2s; &:hover, &:active, &:focus { transition-duration: 0.2s; background-color: $accent-yellow; color: $blue; } } */
 
