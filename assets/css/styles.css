@@ -154,19 +154,21 @@ pre > code, table code { border: none; background-color: transparent; }
 
 .hljs-keyword, .hljs-selector-tag, .hljs-literal, .hljs-title, .hljs-section, .hljs-doctag, .hljs-type, .hljs-name, .hljs-literal, .hljs-number { color: #F0CA4D; }
 
-.blog-page, .post-page, .getting-started-page, .documentation, .guides-page, .setup-elytron { padding: 10px 20px; }
+.blog-page, .post-page, .getting-started-page, .documentation, .OSD-2022-page, .guides-page, .setup-elytron { padding: 10px 20px; }
 
-.blog-page a, .blog-page a:not(.mdl-navigation__link) strong, a:not(.mdl-navigation__link) .blog-page strong, .blog-page a:not(.mdl-navigation__link) em, a:not(.mdl-navigation__link) .blog-page em, .blog-page p, .post-page a, .post-page a:not(.mdl-navigation__link) strong, a:not(.mdl-navigation__link) .post-page strong, .post-page a:not(.mdl-navigation__link) em, a:not(.mdl-navigation__link) .post-page em, .post-page p, .getting-started-page a, .getting-started-page a:not(.mdl-navigation__link) strong, a:not(.mdl-navigation__link) .getting-started-page strong, .getting-started-page a:not(.mdl-navigation__link) em, a:not(.mdl-navigation__link) .getting-started-page em, .getting-started-page p, .documentation a, .documentation a:not(.mdl-navigation__link) strong, a:not(.mdl-navigation__link) .documentation strong, .documentation a:not(.mdl-navigation__link) em, a:not(.mdl-navigation__link) .documentation em, .documentation p, .guides-page a, .guides-page a:not(.mdl-navigation__link) strong, a:not(.mdl-navigation__link) .guides-page strong, .guides-page a:not(.mdl-navigation__link) em, a:not(.mdl-navigation__link) .guides-page em, .guides-page p, .setup-elytron a, .setup-elytron a:not(.mdl-navigation__link) strong, a:not(.mdl-navigation__link) .setup-elytron strong, .setup-elytron a:not(.mdl-navigation__link) em, a:not(.mdl-navigation__link) .setup-elytron em, .setup-elytron p { font-size: 18px; }
+.blog-page a, .blog-page a:not(.mdl-navigation__link) strong, a:not(.mdl-navigation__link) .blog-page strong, .blog-page a:not(.mdl-navigation__link) em, a:not(.mdl-navigation__link) .blog-page em, .blog-page p, .post-page a, .post-page a:not(.mdl-navigation__link) strong, a:not(.mdl-navigation__link) .post-page strong, .post-page a:not(.mdl-navigation__link) em, a:not(.mdl-navigation__link) .post-page em, .post-page p, .getting-started-page a, .getting-started-page a:not(.mdl-navigation__link) strong, a:not(.mdl-navigation__link) .getting-started-page strong, .getting-started-page a:not(.mdl-navigation__link) em, a:not(.mdl-navigation__link) .getting-started-page em, .getting-started-page p, .documentation a, .documentation a:not(.mdl-navigation__link) strong, a:not(.mdl-navigation__link) .documentation strong, .documentation a:not(.mdl-navigation__link) em, a:not(.mdl-navigation__link) .documentation em, .documentation p, .OSD-2022-page a, .OSD-2022-page a:not(.mdl-navigation__link) strong, a:not(.mdl-navigation__link) .OSD-2022-page strong, .OSD-2022-page a:not(.mdl-navigation__link) em, a:not(.mdl-navigation__link) .OSD-2022-page em, .OSD-2022-page p, .guides-page a, .guides-page a:not(.mdl-navigation__link) strong, a:not(.mdl-navigation__link) .guides-page strong, .guides-page a:not(.mdl-navigation__link) em, a:not(.mdl-navigation__link) .guides-page em, .guides-page p, .setup-elytron a, .setup-elytron a:not(.mdl-navigation__link) strong, a:not(.mdl-navigation__link) .setup-elytron strong, .setup-elytron a:not(.mdl-navigation__link) em, a:not(.mdl-navigation__link) .setup-elytron em, .setup-elytron p { font-size: 18px; }
 
-.getting-started-page h1, .setup-elytron h1, .documentation h1 { color: #004153 !important; font-size: 35px; font-weight: 600; }
+.getting-started-page h1, .setup-elytron h1, .OSD-2022-page h1, .documentation h1 { color: #004153 !important; font-size: 35px; font-weight: 600; }
 
-.getting-started-page h2, .setup-elytron h2, .documentation h2 { font-size: 22px; font-weight: 600; }
+.getting-started-page h2, .setup-elytron h2, .OSD-2022-page h2, .documentation h2 { font-size: 22px; font-weight: 600; }
 
-.getting-started-page h3, .setup-elytron h3, .documentation h3 { font-size: 20px; font-weight: 600; }
+.getting-started-page h3, .setup-elytron h3, .OSD-2022-page h3, .documentation h3 { font-size: 20px; font-weight: 600; }
 
-.getting-started-page h1, .getting-started-page h2, .getting-started-page h3, .getting-started-page h4, .getting-started-page h5, .setup-elytron h1, .setup-elytron h2, .setup-elytron h3, .setup-elytron h4, .setup-elytron h5, .documentation h1, .documentation h2, .documentation h3, .documentation h4, .documentation h5 { font-family: "Titillium Web", sans-serif; }
+.getting-started-page h1, .getting-started-page h2, .getting-started-page h3, .getting-started-page h4, .getting-started-page h5, .setup-elytron h1, .setup-elytron h2, .setup-elytron h3, .setup-elytron h4, .setup-elytron h5, .OSD-2022-page h1, .OSD-2022-page h2, .OSD-2022-page h3, .OSD-2022-page h4, .OSD-2022-page h5, .documentation h1, .documentation h2, .documentation h3, .documentation h4, .documentation h5 { font-family: "Titillium Web", sans-serif; }
 
 * { color: #000000; font-family: "Titillium Web", sans-serif; }
+
+.OSD-2022-page strong > a, .OSD-2022-page a:not(.mdl-navigation__link) strong > strong, a:not(.mdl-navigation__link) .OSD-2022-page strong > strong, .OSD-2022-page a:not(.mdl-navigation__link) strong > em, a:not(.mdl-navigation__link) .OSD-2022-page strong > em { font-weight: bold; }
 
 td.content > .title, .audioblock > .title, .exampleblock > .title, .imageblock > .title, .listingblock > .title, .literalblock > .title, .stemblock > .title, .openblock > .title, .paragraph > .title, .quoteblock > .title, table.tableblock > .title, .verseblock > .title, .videoblock > .title, .dlist > .title, .olist > .title, .ulist > .title, .qlist > .title, .hdlist > .title { line-height: 1.45; font-weight: 400; margin-top: 0; margin-bottom: .25em; }
 
@@ -283,6 +285,18 @@ body.post div.post-page .note, body.post div.post-page .colist { overflow: auto;
 .guides-page .guides-block h3, .guides-page .guides-description h3 { line-height: initial; margin: 16px 0px 8px 0px; font-weight: 600; }
 
 .guides-page .guides-description p { text-align: center; }
+
+ul.guide-icon { margin-bottom: 9px; }
+
+ul.guide-icon li { list-style: none; }
+
+ul.guide-icon li::before { content: ''; display: inline-block; height: 30px; width: 30px; background-size: contain; vertical-align: middle; margin: 0px 5px 7px 0px; }
+
+ul.guide-icon li.guide-icon_linux::before { background-image: url(../../assets/images/guides/icon-linux.png); }
+
+ul.guide-icon li.guide-icon_windows::before { background-image: url(../../assets/images/guides/icon-windows.png); }
+
+ul.guide-icon li.guide-icon_macos::before { background-image: url(../../assets/images/guides/icon-macos.png); }
 
 .community-page h1 strong { color: #004153 !important; }
 
