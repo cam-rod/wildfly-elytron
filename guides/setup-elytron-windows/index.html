@@ -184,14 +184,14 @@
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Open Command Prompt, and run <code>java --version</code>.</p>
+<p>Open Command Prompt and run <code>java --version</code>.</p>
 </li>
 <li>
-<p>If the output shows a version number, check to make sure it is Java 11 (e.g., "11.0.15.1"). If so, Java 11 is already installed and you can jump to the "Installing Maven" section. If the output is not Java 11, or if the output is <code>'java' is not recognized as an internal or external command, operable program or batch file</code>, continue with the following steps.</p>
+<p>If the output shows a version number, check to make sure it is Java 11 (e.g., "11.0.15.1"). If so, Java 11 is already installed and you can jump to the <a href="#installing-maven">Installing Maven</a> section. If the output is not Java 11, or if the output is <code>'java' is not recognized as an internal or external command, operable program or batch file</code>, continue with the following steps.</p>
 <div class="olist lowerroman">
 <ol class="lowerroman" type="i">
 <li>
-<p>If you encounter a message such as <code>Java was not found, run without arguments to install from the Microsoft Store.</code>, follow <a href="https://www.windowscentral.com/how-manage-app-execution-aliases-windows-10">these instructions</a> to disable the alias.</p>
+<p>If you encounter a message such as <code>Java was not found, run without arguments to install from the Microsoft Store</code>, follow <a href="https://www.windowscentral.com/how-manage-app-execution-aliases-windows-10">these instructions</a> to disable the alias.</p>
 </li>
 </ol>
 </div>
@@ -218,24 +218,24 @@
 <p>Now open Command Prompt and run <code>java --version</code> once again. This time, the output should be something like (the exact version will depend on the version that was installed):</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-batch hljs" data-lang="batch">java version "11.0.15.1" 2022-04-22 LTS
+<pre class="highlightjs highlight"><code class="language-bat hljs" data-lang="bat">java version "11.0.15.1" 2022-04-22 LTS
 Java(TM) SE Runtime Environment 18.9 (build 11.0.15.1+2-LTS-10)
 Java HotSpot(TM) 64-Bit Server VM 18.9 (build 11.0.15.1+2-LTS-10, mixed mode)</code></pre>
 </div>
 </div>
 </li>
 <li>
-<p>If you don&#8217;t see the output above, that means you&#8217;ll need to update your “Path”. To do so:</p>
+<p>If you don&#8217;t see the output above, that means you&#8217;ll need to update your "Path". To do so:</p>
 <div class="olist lowerroman">
 <ol class="lowerroman" type="i">
 <li>
-<p>Search for “Edit the system environment variables” in your Start menu.</p>
+<p>Search for "Edit the system environment variables" in your Start menu.</p>
 </li>
 <li>
-<p>Click on “Environment Variables”.</p>
+<p>Click on "Environment Variables".</p>
 </li>
 <li>
-<p>Now double click the “Path” under “User variables for <code>&lt;Windows username&gt;</code>”. Then click “New” and enter the directory from the installer with “\bin” at the end. In this example, we&#8217;d need to add <em>C:\Program Files\Java\jdk-11.0.15.1\bin</em> to the “Path”.<br>
+<p>Now double click the "Path" under "User variables for `&lt;Windows username&gt;`". Then click "New" and enter the directory from the installer with "\bin" at the end. In this example, we&#8217;d need to add <em>C:\Program Files\Java\jdk-11.0.15.1\bin</em> to the "Path".<br>
 <span class="image responsive-img_capped"><img src="../../assets/images/setup-elytron/setup-elytron_windows_env-vars.png" alt="Screenshot of the System Properties windows, highlighting the &quot;Environmental Variables&#8230;&#8203;&quot; button"></span>
 <span class="image responsive-img_capped"><img src="../../assets/images/setup-elytron/setup-elytron_windows_path-env-vars.png" alt="Screenshot of the Environmental Variables window, highlighting the User &quot;Path&quot; variable"></span></p>
 </li>
@@ -271,7 +271,7 @@ Java HotSpot(TM) 64-Bit Server VM 18.9 (build 11.0.15.1+2-LTS-10, mixed mode)</c
 <p>Open Command Prompt, and run <code>mvn -v</code>.</p>
 </li>
 <li>
-<p>If the output shows a version number, Maven is already installed and you can jump to the <strong>Installing Git</strong> section. If you get <code>'mvn' is not recognized as an internal or external command, operable program or batch file</code>, then continue with the following steps.</p>
+<p>If the output shows a version number, Maven is already installed and you can jump to the <a href="#installing-git">Installing Git</a> section. If you get <code>'mvn' is not recognized as an internal or external command, operable program or batch file</code>, then continue with the following steps.</p>
 </li>
 <li>
 <p>Close the Command Prompt.</p>
@@ -313,7 +313,7 @@ Java HotSpot(TM) 64-Bit Server VM 18.9 (build 11.0.15.1+2-LTS-10, mixed mode)</c
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-batch hljs" data-lang="batch">Apache Maven 3.8.6 (84538c9988a25aec085021c365c560670ad80f63)
+<pre class="highlightjs highlight"><code class="language-bat hljs" data-lang="bat">Apache Maven 3.8.6 (84538c9988a25aec085021c365c560670ad80f63)
 Maven home: C:\apache-maven-3.8.6
 Java version: 11.0.15.1, vendor: Oracle Corporation, runtime: C:\Program Files\Java\jdk-11.0.15.1
 Default locale: en_CA, platform encoding: Cp1252
@@ -332,10 +332,10 @@ OS name: "windows 10", version: "10.0", arch: "amd64", family: "windows"</code><
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Open Command Prompt, and run <code>git --version</code>.</p>
+<p>Open Command Prompt and run <code>git --version</code>.</p>
 </li>
 <li>
-<p>If the output shows a version number, Git is already installed and you can jump to the <strong>Cloning WildFly Elytron</strong> section. If you get <code>'git' is not recognized as an internal or external command, operable program or batch file</code>, then continue with the following steps.</p>
+<p>If the output shows a version number, Git is already installed and you can jump to the <a href="#cloning-wildfly-elytron">Cloning WildFly Elytron</a> section. If you get <code>'git' is not recognized as an internal or external command, operable program or batch file</code>, then continue with the following steps.</p>
 <div class="olist lowerroman">
 <ol class="lowerroman" type="i">
 <li>
@@ -372,7 +372,16 @@ OS name: "windows 10", version: "10.0", arch: "amd64", family: "windows"</code><
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>First, you&#8217;ll need a GitHub account. If you don&#8217;t already have one, sign up for one at <a href="https://github.com/" class="bare">https://github.com/</a>.</p>
+<p>First, configure Git so that it can attribute your commits to you. Run the following commands in the terminal, substituting your own name and email:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bat hljs" data-lang="bat">git config --global user.email "&lt;you@example.com&gt;"
+git config --global user.name "&lt;Your Name&gt;"</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Next, you&#8217;ll need a GitHub account. If you don&#8217;t already have one, sign up for one at <a href="https://github.com/">github.com</a>. Otherwise, make sure you&#8217;re logged in.</p>
 </li>
 <li>
 <p>Fork the <a href="https://github.com/wildfly-security/wildfly-elytron">WildFly Elytron project</a> into your GitHub account by clicking on the "Fork" button at the top right.</p>
@@ -394,10 +403,16 @@ OS name: "windows 10", version: "10.0", arch: "amd64", family: "windows"</code><
 </div>
 </li>
 <li>
-<p>Open your Command Prompt and navigate to the directory where you want to clone this project. Then enter <code>git clone [URL]</code> and replace <code>[URL]</code> with the URL you copied in step 4.</p>
+<p>Open your terminal and navigate to the directory where you want to clone this project. Then enter <code>git clone [URL]</code> and replace <code>[URL]</code> with the URL you copied in step 4. Now you should see a directory called <code>wildfly-elytron</code> that contains the code for the WildFly Elytron project.</p>
 </li>
 <li>
-<p>Now you should see a directory called <code>wildfly-elytron</code> that contains the code for the WildFly Elytron project.</p>
+<p>Next, add a remote reference to upstream, for pulling future updates from the source repository. Execute the following command in the terminal:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cd wildfly-elytron
+git remote add upstream https://github.com/wildfly-security/wildfly-elytron.git</code></pre>
+</div>
+</div>
 </li>
 </ol>
 </div>
@@ -412,10 +427,10 @@ OS name: "windows 10", version: "10.0", arch: "amd64", family: "windows"</code><
 <p>Open a Command Prompt.</p>
 </li>
 <li>
-<p>Navigate to the wildfly-elytron project directory and run <code>mvn clean install</code>. This will build the project.</p>
+<p>Navigate to the <code>wildfly-elytron</code> project directory and run <code>mvn clean install</code>. This will build the project.</p>
 </li>
 <li>
-<p>Check out the <a href="../../getting-started-for-developers/"><strong>Getting Started for Developers guide</strong></a>.</p>
+<p>Check out the <a href="../../getting-started-for-developers/"><strong>Getting Started for Developers guide</strong></a> to learn more about the WildFly Elytron project and how to run tests.</p>
 </li>
 </ol>
 </div>

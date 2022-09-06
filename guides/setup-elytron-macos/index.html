@@ -183,10 +183,10 @@
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Open a terminal, and run <code>java --version</code>.</p>
+<p>Open a terminal and run <code>java --version</code>.</p>
 </li>
 <li>
-<p>If the output shows a version number, check to make sure it is Java 11 (e.g., "11.0.15.1"). If so, Java 11 is already installed and you can jump to the <strong>Installing Maven</strong> section. If the output is not Java 11, or if the output is <code>command not found: java</code> or a similar message indicating you do not have Java installed, then continue with the following steps.</p>
+<p>If the output shows a version number, check to make sure it is Java 11 (e.g., "11.0.15.1"). If so, Java 11 is already installed and you can jump to the <a href="#installing-maven">Installing Maven</a> section. If the output is not Java 11, or if the output is <code>command not found: java</code> or a similar message indicating you do not have Java installed, then continue with the following steps.</p>
 </li>
 </ol>
 </div>
@@ -228,13 +228,13 @@
 <p>Open the configuration file for your shell, which you can identify by typing <code>echo $0</code>. If the response is <code>bash</code>, open the file <em>~/.bashrc</em>, and if it is <code>sh</code>, edit <em>~/.profile</em>. You can look up config files for other shells by searching the name of the shell, followed by "config file" (ex. "zsh config file").</p>
 </li>
 <li>
-<p>Go to the end of the config file, and add the following lines:
-+
-[source,bash]
-----
-export JAVA_HOME=$(/usr/libexec/java_home)
-export PATH=$JAVA_HOME/bin:$PATH
-----</p>
+<p>Go to the end of the config file, and add the following lines:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">export JAVA_HOME=$(/usr/libexec/java_home)
+export PATH=$JAVA_HOME/bin:$PATH</code></pre>
+</div>
+</div>
 </li>
 <li>
 <p>Run <code>source &lt;config file&gt;</code>, substituting in your config file, to load the changes into the terminal.</p>
@@ -265,7 +265,7 @@ export PATH=$JAVA_HOME/bin:$PATH
 <p>Open a terminal, and run <code>mvn -v</code>.</p>
 </li>
 <li>
-<p>If the output shows a version number, Maven is already installed and you can jump to the <strong>Installing Git</strong> section. If you get <code>command not found: mvn</code> or a similar message indicating you do not have maven installed, then continue with the following steps.</p>
+<p>If the output shows a version number, Maven is already installed and you can jump to the <a href="#installing-git">Installing Git</a> section. If you get <code>command not found: mvn</code> or a similar message indicating you do not have maven installed, then continue with the following steps.</p>
 </li>
 </ol>
 </div>
@@ -295,10 +295,10 @@ export PATH=$JAVA_HOME/bin:$PATH
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Open a terminal, and run <code>git --version</code>.</p>
+<p>Open a terminal and run <code>git --version</code>.</p>
 </li>
 <li>
-<p>If the output shows a version number, Git is already installed and you can jump to the <strong>Cloning WildFly Elytron</strong> section. If you get <code>command not found: git</code> or a similar message indicating you do not have Git installed, then continue with the following steps.</p>
+<p>If the output shows a version number, Git is already installed and you can jump to the <a href="#cloning-wildfly-elytron">Cloning WildFly Elytron</a> section. If you get <code>command not found: git</code> or a similar message indicating you do not have Git installed, then continue with the following steps.</p>
 </li>
 </ol>
 </div>
@@ -327,7 +327,16 @@ export PATH=$JAVA_HOME/bin:$PATH
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>First, you&#8217;ll need a GitHub account. If you don&#8217;t already have one, sign up for one at <a href="https://github.com/" class="bare">https://github.com/</a>.</p>
+<p>First, configure Git so that it can attribute your commits to you. Run the following commands in the terminal, substituting your own name and email:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">git config --global user.email "&lt;you@example.com&gt;"
+git config --global user.name "&lt;Your Name&gt;"</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Next, you&#8217;ll need a GitHub account. If you don&#8217;t already have one, sign up for one at <a href="https://github.com/">github.com</a>. Otherwise, make sure you&#8217;re logged in.</p>
 </li>
 <li>
 <p>Fork the <a href="https://github.com/wildfly-security/wildfly-elytron">WildFly Elytron project</a> into your GitHub account by clicking on the "Fork" button at the top right.</p>
@@ -347,10 +356,16 @@ export PATH=$JAVA_HOME/bin:$PATH
 </div>
 </li>
 <li>
-<p>Open your terminal and navigate to the directory where you want to clone this project. Then enter <code>git clone [URL]</code> and replace <code>[URL]</code> with the URL you copied in step 4.</p>
+<p>Open your terminal and navigate to the directory where you want to clone this project. Then enter <code>git clone [URL]</code> and replace <code>[URL]</code> with the URL you copied in step 4. Now you should see a directory called <code>wildfly-elytron</code> that contains the code for the WildFly Elytron project.</p>
 </li>
 <li>
-<p>Now you should see a directory called <code>wildfly-elytron</code> that contains the code for the WildFly Elytron project.</p>
+<p>Next, add a remote reference to upstream, for pulling future updates from the source repository. Execute the following command in the terminal:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cd wildfly-elytron
+git remote add upstream https://github.com/wildfly-security/wildfly-elytron.git</code></pre>
+</div>
+</div>
 </li>
 </ol>
 </div>
@@ -368,7 +383,7 @@ export PATH=$JAVA_HOME/bin:$PATH
 <p>Navigate to the wildfly-elytron project directory and run <code>mvn clean install</code>. This will build the project.</p>
 </li>
 <li>
-<p>Check out the <a href="../../getting-started-for-developers/"><strong>Getting Started for Developers guide</strong></a>.</p>
+<p>Check out the <a href="../../getting-started-for-developers/"><strong>Getting Started for Developers guide</strong></a> to learn more about the WildFly Elytron project and how to run tests.</p>
 </li>
 </ol>
 </div>

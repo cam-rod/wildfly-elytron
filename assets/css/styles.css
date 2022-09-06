@@ -20,6 +20,8 @@ h4 { font-size: 18px; }
 
 h5 { font-size: 16px; }
 
+.nowrap > code { white-space: nowrap; }
+
 a:not(.mdl-navigation__link), a:not(.mdl-navigation__link) strong:not(.mdl-navigation__link), a:not(.mdl-navigation__link) em:not(.mdl-navigation__link) { color: #004153 !important; }
 
 .mdl-navigation { padding-top: 0px !important; }
@@ -284,7 +286,11 @@ body.post div.post-page .note, body.post div.post-page .colist { overflow: auto;
 
 .guides-page .guides-block h3, .guides-page .guides-description h3 { line-height: initial; margin: 16px 0px 8px 0px; font-weight: 600; }
 
+@media screen and (min-width: 2000px) { .guides-page .guides-block, .guides-page .guides-description { grid-column: span 2 !important; } .guides-page .guides-block_windows { grid-column: 4 / 6 !important; } }
+
 .guides-page .guides-description p { text-align: center; }
+
+@media screen and (min-width: 2000px) { .guides-page .guides-description { grid-column: span 12 !important; } }
 
 ul.guide-icon { margin-bottom: 9px; }
 
@@ -332,11 +338,11 @@ a.mdl-navigation__link--current.highlight-sidebar:hover, a:not(.mdl-navigation__
 /* MDL chip button */
 div.highlight-chip { margin: 24px 6px 0px 6px; text-align: center; max-width: 100%; }
 
-div.highlight-chip button.mdl-chip { background-color: #F0AB00; max-width: 100%; }
+div.highlight-chip button.mdl-chip { background-color: #F0AB00; max-width: 100%; transition-duration: 0.2s; }
 
-div.highlight-chip button.mdl-chip:hover { outline: 0; box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12); }
+div.highlight-chip button.mdl-chip:hover { cursor: pointer; transition-duration: 0.2s; outline: 0; background-color: #A3DBE8; box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12); }
 
-div.highlight-chip button.mdl-chip:active { background-color: #f8b308; box-shadow: none; }
+div.highlight-chip button.mdl-chip:active { cursor: pointer; background-color: #88c5d3; box-shadow: none; }
 
 div.highlight-chip button.mdl-chip span { color: #004153; font-size: 18px; font-weight: 500; }
 
