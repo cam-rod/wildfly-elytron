@@ -165,12 +165,7 @@
 <li><a href="#installing-git">Installing Git</a></li>
 <li><a href="#cloning-wildfly-elytron">Cloning WildFly Elytron</a></li>
 <li><a href="#building-wildfly-elytron">Building WildFly Elytron</a></li>
-<li><a href="#optional-temporary-configuration"><em>[OPTIONAL] Temporary Configuration</em></a>
-<ul class="sectlevel2">
-<li><a href="#java"><em>Java</em></a></li>
-<li><a href="#advanced-session-configuration-only"><em>[ADVANCED] Session configuration only</em></a></li>
-</ul>
-</li>
+<li><a href="#restoring-configuration">Restoring Configuration</a></li>
 </ul>
 </div>
 <div class="sect1">
@@ -199,7 +194,7 @@
 <p>If you don&#8217;t already have brew installed, run the following command:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</code></pre>
+<pre class="highlightjs highlight"><code class="language-zsh hljs" data-lang="zsh">/bin/zsh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</code></pre>
 </div>
 </div>
 </li>
@@ -216,31 +211,28 @@
 <p>Create a symbolic link at <em>/Library/Java/JavaVirtualMachines/openjdk.jdk</em>:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sudo ln -sfn /usr/local/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk</code></pre>
+<pre class="highlightjs highlight"><code class="language-zsh hljs" data-lang="zsh">sudo ln -sfn /usr/local/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk</code></pre>
 </div>
 </div>
 </li>
 <li>
-<p>Configure <code>JAVA_HOME</code> and <code>PATH</code> environment variables for Java:</p>
+<p>Configure <code>JAVA_HOME</code> and <code>PATH</code> environment variables for Java  (or <a href="../restoring-configuration/#temporary-configuration">use a temporary configuration</a>):</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Open the configuration file for your shell, which you can identify by typing <code>echo $0</code>. If the response is <code>bash</code>, open the file <em>~/.bashrc</em>, and if it is <code>sh</code>, edit <em>~/.profile</em>. You can look up config files for other shells by searching the name of the shell, followed by "config file" (ex. "zsh config file").</p>
+<p>Open the configuration file for your shell, which you can identify by typing <code>echo $0</code>. If the response is <code>zsh</code>, open the file <em>~/.zshrc</em>, and if it is <code>sh</code>, edit <em>~/.profile</em>. You can look up config files for other shells by searching the name of the shell, followed by "config file" (ex. "bash config file").</p>
 </li>
 <li>
 <p>Go to the end of the config file, and add the following lines:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">export JAVA_HOME=$(/usr/libexec/java_home)
+<pre class="highlightjs highlight"><code class="language-zsh hljs" data-lang="zsh">export JAVA_HOME=$(/usr/libexec/java_home)
 export PATH=$JAVA_HOME/bin:$PATH</code></pre>
 </div>
 </div>
 </li>
 <li>
 <p>Run <code>source &lt;config file&gt;</code>, substituting in your config file, to load the changes into the terminal.</p>
-</li>
-<li>
-<p>You can undo these changes later on by following the steps in the <strong>Temporary Configuration</strong> section.</p>
 </li>
 </ol>
 </div>
@@ -271,10 +263,10 @@ export PATH=$JAVA_HOME/bin:$PATH</code></pre>
 </div>
 </li>
 <li>
-<p>It is easiest to install Maven using the <a href="https://brew.sh/">Homebrew</a> package manager. (If you&#8217;d prefer to install Maven manually, check out this <a href="https://mkyong.com/maven/install-maven-on-mac-osx/#install-maven-manually">guide</a>.)</p>
+<p>It is easiest to install Maven using the <a href="https://brew.sh/">Homebrew</a> package manager. (If you&#8217;d prefer to install Maven manually, check out <a href="https://mkyong.com/maven/install-maven-on-mac-osx/#install-maven-manually">this guide</a>. Also consider <a href="../restoring-configuration/#temporary-configuration">a temporary configuration</a>.)</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">brew install maven</code></pre>
+<pre class="highlightjs highlight"><code class="language-zsh hljs" data-lang="zsh">brew install maven</code></pre>
 </div>
 </div>
 </li>
@@ -307,7 +299,7 @@ export PATH=$JAVA_HOME/bin:$PATH</code></pre>
 <p>It is easiest to install git using the <a href="https://brew.sh/">Homebrew</a> package manager. (If you&#8217;d prefer to install using a different approach, there are some more options <a href="https://git-scm.com/download/mac">here</a>.)</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">brew install git</code></pre>
+<pre class="highlightjs highlight"><code class="language-zsh hljs" data-lang="zsh">brew install git</code></pre>
 </div>
 </div>
 </li>
@@ -330,7 +322,7 @@ export PATH=$JAVA_HOME/bin:$PATH</code></pre>
 <p>First, configure Git so that it can attribute your commits to you. Run the following commands in the terminal, substituting your own name and email:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">git config --global user.email "&lt;you@example.com&gt;"
+<pre class="highlightjs highlight"><code class="language-zsh hljs" data-lang="zsh">git config --global user.email "&lt;you@example.com&gt;"
 git config --global user.name "&lt;Your Name&gt;"</code></pre>
 </div>
 </div>
@@ -362,7 +354,7 @@ git config --global user.name "&lt;Your Name&gt;"</code></pre>
 <p>Next, add a remote reference to upstream, for pulling future updates from the source repository. Execute the following command in the terminal:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cd wildfly-elytron
+<pre class="highlightjs highlight"><code class="language-zsh hljs" data-lang="zsh">cd wildfly-elytron
 git remote add upstream https://github.com/wildfly-security/wildfly-elytron.git</code></pre>
 </div>
 </div>
@@ -390,66 +382,10 @@ git remote add upstream https://github.com/wildfly-security/wildfly-elytron.git<
 </div>
 </div>
 <div class="sect1">
-<h2 id="optional-temporary-configuration"><a class="anchor" href="#optional-temporary-configuration"></a><em>[OPTIONAL] Temporary Configuration</em></h2>
+<h2 id="restoring-configuration"><a class="anchor" href="#restoring-configuration"></a>Restoring Configuration</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>If you want to undo the changes to the default Java version, you can remove the modifications after you finish. We will not uninstall the programs, in case you want to use them later, but this can be done as follows <em>(Homebrew instructions only)</em>:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Open a terminal.</p>
-</li>
-<li>
-<p>Use Homebrew to remove the package: <code>brew remove &lt;package-name&gt;</code></p>
-<div class="ulist">
-<ul>
-<li>
-<p><em>To remove leftover dependencies, also run</em> <code>brew autoremove</code></p>
-</li>
-</ul>
-</div>
-</li>
-</ol>
-</div>
-<div class="sect2">
-<h3 id="java"><a class="anchor" href="#java"></a><em>Java</em></h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Open your shell&#8217;s configuration file, and remove the <code>JAVA_HOME</code> and <code>PATH</code> exports that you added:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">export JAVA_HOME=$(/usr/libexec/java_home)
-export PATH=$JAVA_HOME/bin:$PATH</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Run <code>source &lt;config file&gt;</code> to load your changes into the terminal.</p>
-</li>
-<li>
-<p>Remove the symbolic link you added by running this in the terminal:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sudo rm -f /Library/Java/JavaVirtualMachines/openjdk.jdk</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Enter <code>java --version</code> to see that it matches what was setup before</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="advanced-session-configuration-only"><a class="anchor" href="#advanced-session-configuration-only"></a><em>[ADVANCED] Session configuration only</em></h3>
-<div class="paragraph">
-<p>You can only set the changes for the current terminal by typing the export commands for <code>JAVA_HOME</code> and <code>PATH</code> directly into the terminal (ex. <code>export JAVA_HOME=$(/usr/libexec/java_home)</code> and <code>export PATH=$JAVA_HOME/bin:$PATH</code>).</p>
-</div>
-<div class="paragraph">
-<p>However, these will reset to their original values once the terminal window/tab is closed, and won&#8217;t be available to any programs not launched by the terminal (like an IDE). _Only use this method if you understand the implications.</p>
-</div>
+<p>If you need to restore your original system configuration at some point, <a href="../restoring-configuration/">you can follow the steps here</a>.</p>
 </div>
 </div>
 </div>

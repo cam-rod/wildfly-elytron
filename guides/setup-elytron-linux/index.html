@@ -165,13 +165,7 @@
 <li><a href="#installing-git">Installing Git</a></li>
 <li><a href="#cloning-wildfly-elytron">Cloning WildFly Elytron</a></li>
 <li><a href="#building-wildfly-elytron">Building WildFly Elytron</a></li>
-<li><a href="#optional-temporary-configuration"><em>[OPTIONAL] Temporary Configuration</em></a>
-<ul class="sectlevel2">
-<li><a href="#java"><em>Java</em></a></li>
-<li><a href="#maven"><em>Maven</em></a></li>
-<li><a href="#advanced-session-configuration-only"><em>[ADVANCED] Session configuration only</em></a></li>
-</ul>
-</li>
+<li><a href="#restoring-configuration">Restoring Configuration</a></li>
 </ul>
 </div>
 <div class="sect1">
@@ -203,7 +197,7 @@
 <p>Fedora: <code>sudo dnf install java-11-openjdk-devel</code></p>
 </li>
 <li>
-<p>Arch: <code>sudo pacman -S java-11-openjdk</code></p>
+<p>Arch: <code>sudo pacman -S jdk11-openjdk</code></p>
 </li>
 </ul>
 </div>
@@ -225,7 +219,7 @@
 </div>
 </li>
 <li>
-<p>Configure JAVA_HOME and PATH environment variables for Java:</p>
+<p>Configure JAVA_HOME and PATH environment variables for Java (or <a href="../restoring-configuration/#temporary-configuration">use a temporary configuration</a>):</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -249,9 +243,6 @@ export PATH=$JAVA_HOME/bin:$PATH</code></pre>
 </li>
 <li>
 <p>Run <code>source &lt;config file&gt;</code>, substituting in your config file, to load the changes into the terminal.</p>
-</li>
-<li>
-<p>You can undo these changes later on by following the steps in the <strong>Temporary Configuration</strong> section.</p>
 </li>
 </ol>
 </div>
@@ -283,7 +274,28 @@ export PATH=$JAVA_HOME/bin:$PATH</code></pre>
 </li>
 <li>
 <p>Either install Maven with your package manager, or go to <a href="https://maven.apache.org/download.cgi">this page</a> and download the latest Binary zip archive (e.g, <code>apache-maven-3.8.6-bin.zip</code>).</p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Package manager:</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Ubuntu: <code>sudo apt-get install maven</code></p>
 </li>
+<li>
+<p>Fedora: <code>sudo dnf install maven</code></p>
+</li>
+<li>
+<p>Arch: <code>sudo pacman -S maven</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em>Manual installation:</em></p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
 <li>
 <p>Extract the distribution archive in any directory:</p>
 <div class="listingblock">
@@ -293,11 +305,7 @@ export PATH=$JAVA_HOME/bin:$PATH</code></pre>
 </div>
 </li>
 <li>
-<p>Configure <code>PATH</code> environment variable for Maven:</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Open the configuration file for your shell, and add the following line:</p>
+<p>Add the following to the end of the configuration file for your shell  (or <a href="../restoring-configuration/#temporary-configuration">use a temporary configuration</a>):</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">export PATH=&lt;path to Maven folder&gt;/apache-maven-3.8.6/bin:$PATH</code></pre>
@@ -307,10 +315,10 @@ export PATH=$JAVA_HOME/bin:$PATH</code></pre>
 <li>
 <p>Run <code>source &lt;config file&gt;</code>, substituting in your config file, to load the changes into the terminal.</p>
 </li>
-<li>
-<p>You can undo these changes later on by following the steps in the <strong>Temporary Configuration</strong> section.</p>
-</li>
 </ol>
+</div>
+</li>
+</ul>
 </div>
 </li>
 <li>
@@ -435,126 +443,10 @@ git remote add upstream https://github.com/wildfly-security/wildfly-elytron.git<
 </div>
 </div>
 <div class="sect1">
-<h2 id="optional-temporary-configuration"><a class="anchor" href="#optional-temporary-configuration"></a><em>[OPTIONAL] Temporary Configuration</em></h2>
+<h2 id="restoring-configuration"><a class="anchor" href="#restoring-configuration"></a>Restoring Configuration</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>If you want to undo the changes to the default Java and Maven versions, you can remove the modifications after you finish. We will not uninstall the programs, in case you want to use them later, but this can be done as follows:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Open a terminal.</p>
-</li>
-<li>
-<p>Use your distribution&#8217;s package manager to remove the installed program. For common distributions:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Ubuntu: <code>sudo apt-get remove &lt;package-name&gt;</code></p>
-<div class="ulist">
-<ul>
-<li>
-<p><em>to remove leftover dependencies, also run</em> <code>sudo apt-get autoremove</code></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Fedora: <code>sudo dnf remove &lt;package-name&gt;</code></p>
-<div class="ulist">
-<ul>
-<li>
-<p><em>DNF automatically removes unused dependencies with the package</em></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Arch: <code>sudo pacman -R &lt;package-name&gt;</code></p>
-<div class="ulist">
-<ul>
-<li>
-<p><em>to remove leftover dependencies, also run</em> <code>sudo pacman -Qtdq | pacman -Rns -</code></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ol>
-</div>
-<div class="sect2">
-<h3 id="java"><a class="anchor" href="#java"></a><em>Java</em></h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Open your shell&#8217;s configuration file, and remove the <code>JAVA_HOME</code> and <code>PATH</code> exports that you added:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::")
-export PATH=$JAVA_HOME/bin:$PATH</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Run <code>source &lt;config file&gt;</code> to load your changes into the terminal.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>If you already had another version of Java installed, you can switch back to it:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Ubuntu: <code>sudo update-alternatives --config java</code></p>
-</li>
-<li>
-<p>Fedora: <code>sudo alternatives --config java</code></p>
-</li>
-<li>
-<p>Arch: <code>archlinux-java set &lt;existing Java installation&gt;</code></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Type <code>java --version</code>. It should show the original message.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="maven"><a class="anchor" href="#maven"></a><em>Maven</em></h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Open your shell&#8217;s configuration file, and remove the <code>PATH</code> export that you added:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">export PATH=&lt;path to Maven folder&gt;/apache-maven-3.8.6/bin:$PATH</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Run <code>source &lt;config file&gt;</code> to load your changes into the terminal.</p>
-</li>
-<li>
-<p>Enter <code>mvn -v</code>. The original message should appear.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="advanced-session-configuration-only"><a class="anchor" href="#advanced-session-configuration-only"></a><em>[ADVANCED] Session configuration only</em></h3>
-<div class="paragraph">
-<p>You can only set the changes for the current terminal by typing the export commands for <code>JAVA_HOME</code> and <code>PATH</code> directly into the terminal (ex. <code>export PATH=&lt;path to Maven folder&gt;/apache-maven-3.8.6/bin:$PATH</code>).</p>
-</div>
-<div class="paragraph">
-<p>However, these will reset to their original values once the terminal window/tab is closed, and won&#8217;t be available to any programs not launched by the terminal (like an IDE). <em>Only use this method if you understand the implications.</em></p>
-</div>
+<p>If you need to restore your original system configuration at some point, <a href="../restoring-configuration/">you can follow the steps here</a>.</p>
 </div>
 </div>
 </div>

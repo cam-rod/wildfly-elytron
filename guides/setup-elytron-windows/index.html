@@ -165,13 +165,7 @@
 <li><a href="#installing-git">Installing Git</a></li>
 <li><a href="#cloning-wildfly-elytron">Cloning WildFly Elytron</a></li>
 <li><a href="#building-wildfly-elytron">Building WildFly Elytron</a></li>
-<li><a href="#optional-temporary-configuration"><em>[OPTIONAL] Temporary Configuration</em></a>
-<ul class="sectlevel2">
-<li><a href="#java"><em>Java</em></a></li>
-<li><a href="#maven"><em>Maven</em></a></li>
-<li><a href="#advanced-session-configuration-only"><em>[ADVANCED] Session configuration only</em></a></li>
-</ul>
-</li>
+<li><a href="#restoring-configuration">Restoring Configuration</a></li>
 </ul>
 </div>
 <div class="sect1">
@@ -225,7 +219,7 @@ Java HotSpot(TM) 64-Bit Server VM 18.9 (build 11.0.15.1+2-LTS-10, mixed mode)</c
 </div>
 </li>
 <li>
-<p>If you don&#8217;t see the output above, that means you&#8217;ll need to update your "Path". To do so:</p>
+<p>If you don&#8217;t see the output above, that means you&#8217;ll need to update your "Path"  (optionally, <a href="../restoring-configuration/#temporary-configuration">use a temporary configuration</a>):</p>
 <div class="olist lowerroman">
 <ol class="lowerroman" type="i">
 <li>
@@ -235,7 +229,7 @@ Java HotSpot(TM) 64-Bit Server VM 18.9 (build 11.0.15.1+2-LTS-10, mixed mode)</c
 <p>Click on "Environment Variables".</p>
 </li>
 <li>
-<p>Now double click the "Path" under "User variables for `&lt;Windows username&gt;`". Then click "New" and enter the directory from the installer with "\bin" at the end. In this example, we&#8217;d need to add <em>C:\Program Files\Java\jdk-11.0.15.1\bin</em> to the "Path".<br>
+<p>Now double click the "Path" entry under "User variables for <code>&lt;Windows username&gt;</code>". Then click "New" and enter the directory from the installer with "\bin" at the end. In this example, we&#8217;d need to add <em>C:\Program Files\Java\jdk-11.0.15.1\bin</em> to the "Path".<br>
 <span class="image responsive-img_capped"><img src="../../assets/images/setup-elytron/setup-elytron_windows_env-vars.png" alt="Screenshot of the System Properties windows, highlighting the &quot;Environmental Variables&#8230;&#8203;&quot; button"></span>
 <span class="image responsive-img_capped"><img src="../../assets/images/setup-elytron/setup-elytron_windows_path-env-vars.png" alt="Screenshot of the Environmental Variables window, highlighting the User &quot;Path&quot; variable"></span></p>
 </li>
@@ -244,9 +238,6 @@ Java HotSpot(TM) 64-Bit Server VM 18.9 (build 11.0.15.1+2-LTS-10, mixed mode)</c
 </li>
 <li>
 <p>If you now close and re-open the Command Prompt, and run <code>java --version</code>, you should now successfully see the Java 11 version that was installed.</p>
-</li>
-<li>
-<p>You can undo these changes later on by following the steps in the <strong>Temporary Configuration</strong> section.</p>
 </li>
 </ol>
 </div>
@@ -283,10 +274,10 @@ Java HotSpot(TM) 64-Bit Server VM 18.9 (build 11.0.15.1+2-LTS-10, mixed mode)</c
 <p>Go to <a href="https://maven.apache.org/download.cgi">this page</a> and download the latest Binary zip archive (e.g., <code>apache-maven-3.8.6-bin.zip</code>).</p>
 </li>
 <li>
-<p>Extract the zip and make a note of where it was extracted (e.g., <em>C:-maven-3.8.6</em>).</p>
+<p>Extract the zip and make a note of where it was extracted (e.g., <em>C:\maven-3.8.6</em>).</p>
 </li>
 <li>
-<p>Add Maven to the "Path":</p>
+<p>Add Maven to the "Path"  (or <a href="../restoring-configuration/#temporary-configuration">use a temporary configuration</a>):</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -296,7 +287,7 @@ Java HotSpot(TM) 64-Bit Server VM 18.9 (build 11.0.15.1+2-LTS-10, mixed mode)</c
 <p>Click on "Environment Variables".</p>
 </li>
 <li>
-<p>Now double click the "Path" under "User variables for `&lt;Windows username&gt;`". Then click "New" and enter the directory from the installer with "" at the end. In this example, we&#8217;d need to add <em>C:-maven-3.8.6</em> to the "Path".<br>
+<p>Now double click the "Path" entry under "User variables for <code>&lt;Windows username&gt;</code>". Then click "New" and enter the directory from the installer with "\bin" at the end. In this example, we&#8217;d need to add <em>C:\maven-3.8.6\bin</em> to the "Path".<br>
 <span class="image responsive-img_capped"><img src="../../assets/images/setup-elytron/setup-elytron_windows_env-vars.png" alt="Screenshot of the System Properties windows, highlighting the &quot;Environmental Variables&#8230;&#8203;&quot; button"></span>
 <span class="image responsive-img_capped"><img src="../../assets/images/setup-elytron/setup-elytron_windows_path-env-vars.png" alt="Screenshot of the Environmental Variables window, highlighting the User &quot;Path&quot; variable"></span></p>
 </li>
@@ -339,7 +330,7 @@ OS name: "windows 10", version: "10.0", arch: "amd64", family: "windows"</code><
 <div class="olist lowerroman">
 <ol class="lowerroman" type="i">
 <li>
-<p>If you encounter a message such as <code>Git was not found, run without arguments to install from the Microsoft Store.</code>, follow <a href="https://www.windowscentral.com/how-manage-app-execution-aliases-windows-10">these instructions</a> to disable the alias.</p>
+<p>If you encounter a message such as <code>Git was not found, run without arguments to install from the Microsoft Store</code>, follow <a href="https://www.windowscentral.com/how-manage-app-execution-aliases-windows-10">these instructions</a> to disable the alias.</p>
 </li>
 </ol>
 </div>
@@ -437,83 +428,10 @@ git remote add upstream https://github.com/wildfly-security/wildfly-elytron.git<
 </div>
 </div>
 <div class="sect1">
-<h2 id="optional-temporary-configuration"><a class="anchor" href="#optional-temporary-configuration"></a><em>[OPTIONAL] Temporary Configuration</em></h2>
+<h2 id="restoring-configuration"><a class="anchor" href="#restoring-configuration"></a>Restoring Configuration</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>If you want to undo the changes to the default Java version, you can remove the modifications after you finish. We will not uninstall the programs, in case you want to use them later, but this can be done as follows:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Open the Start menu, and click the Settings icon.</p>
-</li>
-<li>
-<p>Select "System", then "Apps &amp; features".</p>
-</li>
-<li>
-<p>Scroll down until you see the program (ex. Maven, OpenJDK), and click on it.</p>
-</li>
-<li>
-<p>Click the "Uninstall" button (sometimes "Uninstall/Repair"), and follows the prompts.</p>
-</li>
-</ol>
-</div>
-<div class="sect2">
-<h3 id="java"><a class="anchor" href="#java"></a><em>Java</em></h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Search for "Edit the system environment variables" in your Start menu.</p>
-</li>
-<li>
-<p>Click on "Environment Variables".</p>
-</li>
-<li>
-<p>Now double click the "Path" under "User variables for `&lt;Windows username&gt;`". Then select <em>C:Files.15.1</em> in the entries and click Delete.<br>
-<span class="image responsive-img_capped"><img src="../../assets/images/setup-elytron/setup-elytron_windows_env-vars.png" alt="Screenshot of the System Properties windows, highlighting the &quot;Environmental Variables&#8230;&#8203;&quot; button"></span>
-<span class="image responsive-img_capped"><img src="../../assets/images/setup-elytron/setup-elytron_windows_path-env-vars.png" alt="Screenshot of the Environmental Variables window, highlighting the User &quot;Path&quot; variable"></span></p>
-</li>
-<li>
-<p>Click Ok until all of the windows are closed.</p>
-</li>
-<li>
-<p>Close and re-open the Command Prompt, and run <code>java --version</code>. The original message should now appear.</p>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect2">
-<h3 id="maven"><a class="anchor" href="#maven"></a><em>Maven</em></h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Search for "Edit the system environment variables" in your Start menu.</p>
-</li>
-<li>
-<p>Click on "Environment Variables".</p>
-</li>
-<li>
-<p>Now double click the "Path" under "User variables for `&lt;Windows username&gt;`". Then select <em>C:-maven-3.8.6</em> in the entries and click Delete.<br>
-<span class="image responsive-img_capped"><img src="../../assets/images/setup-elytron/setup-elytron_windows_env-vars.png" alt="Screenshot of the System Properties windows, highlighting the &quot;Environmental Variables&#8230;&#8203;&quot; button"></span>
-<span class="image responsive-img_capped"><img src="../../assets/images/setup-elytron/setup-elytron_windows_path-env-vars.png" alt="Screenshot of the Environmental Variables window, highlighting the User &quot;Path&quot; variable"></span></p>
-</li>
-<li>
-<p>Now hit Ok until those windows all close</p>
-</li>
-<li>
-<p>Close and re-open the Command Prompt, and run <code>java --version</code>. The original message should now appear.</p>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect2">
-<h3 id="advanced-session-configuration-only"><a class="anchor" href="#advanced-session-configuration-only"></a><em>[ADVANCED] Session configuration only</em></h3>
-<div class="paragraph">
-<p>You can only set the changes for the current Command Prompt by adding Java to the PATH directly from the shell: <code>SET PATH=%PATH%;C:\path\to\Java\bin</code></p>
-</div>
-<div class="paragraph">
-<p>However, these will reset to their original values once the Command Prompt window/tab is closed, and won&#8217;t be available to any programs not launched by the prompt (like an IDE). <em>Only use this method if you understand the implications.</em></p>
-</div>
+<p>If you need to restore your original system configuration at some point, <a href="../restoring-configuration/">you can follow the steps here</a>.</p>
 </div>
 </div>
 </div>
