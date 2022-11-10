@@ -31,8 +31,8 @@
 <meta property="og:title" content="Enabling Integrity on Filesystem realms" />
 <meta name="author" content="Ashpan Raskar" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Previously, any data in the filesystem realm was not verified, this meant that anyone with access to the identity files, could tamper with the data without any way of knowing. WildFly 27 adds support for filesystem integrity checking has been added by adding signatures to identity files. This is done using a public-private key pair." />
-<meta property="og:description" content="Previously, any data in the filesystem realm was not verified, this meant that anyone with access to the identity files, could tamper with the data without any way of knowing. WildFly 27 adds support for filesystem integrity checking has been added by adding signatures to identity files. This is done using a public-private key pair." />
+<meta name="description" content="Previously, any data in the filesystem realm was not verified, this meant that anyone with access to the identity files, could tamper with the data without any way of knowing. WildFly 27 adds support for filesystem integrity checking by adding signatures to identity files. This is done using a public-private key pair." />
+<meta property="og:description" content="Previously, any data in the filesystem realm was not verified, this meant that anyone with access to the identity files, could tamper with the data without any way of knowing. WildFly 27 adds support for filesystem integrity checking by adding signatures to identity files. This is done using a public-private key pair." />
 <link rel="canonical" href="https://wildfly-security.github.io/wildfly-elytron/blog/filesystem-integrity/" />
 <meta property="og:url" content="https://wildfly-security.github.io/wildfly-elytron/blog/filesystem-integrity/" />
 <meta property="og:site_name" content="WildFly Elytron" />
@@ -43,7 +43,7 @@
 <meta property="twitter:image" content="https://wildfly-security.github.io/wildfly-elytron/assets/images/wildfly-elytron-logo.jpg" />
 <meta property="twitter:title" content="Enabling Integrity on Filesystem realms" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Ashpan Raskar"},"dateModified":"2022-11-10T00:00:00+00:00","datePublished":"2022-11-10T00:00:00+00:00","description":"Previously, any data in the filesystem realm was not verified, this meant that anyone with access to the identity files, could tamper with the data without any way of knowing. WildFly 27 adds support for filesystem integrity checking has been added by adding signatures to identity files. This is done using a public-private key pair.","headline":"Enabling Integrity on Filesystem realms","image":"https://wildfly-security.github.io/wildfly-elytron/assets/images/wildfly-elytron-logo.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"https://wildfly-security.github.io/wildfly-elytron/blog/filesystem-integrity/"},"url":"https://wildfly-security.github.io/wildfly-elytron/blog/filesystem-integrity/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Ashpan Raskar"},"dateModified":"2022-11-10T00:00:00+00:00","datePublished":"2022-11-10T00:00:00+00:00","description":"Previously, any data in the filesystem realm was not verified, this meant that anyone with access to the identity files, could tamper with the data without any way of knowing. WildFly 27 adds support for filesystem integrity checking by adding signatures to identity files. This is done using a public-private key pair.","headline":"Enabling Integrity on Filesystem realms","image":"https://wildfly-security.github.io/wildfly-elytron/assets/images/wildfly-elytron-logo.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"https://wildfly-security.github.io/wildfly-elytron/blog/filesystem-integrity/"},"url":"https://wildfly-security.github.io/wildfly-elytron/blog/filesystem-integrity/"}</script>
 <!-- End Jekyll SEO tag -->
 
 </head>
@@ -200,7 +200,7 @@
 </div>
       <div class="grid__item width-12-12">
           <div class="paragraph">
-<p>Previously, any data in the filesystem realm was not verified, this meant that anyone with access to the identity files, could tamper with the data without any way of knowing. WildFly 27 adds support for filesystem integrity checking has been added by adding signatures to identity files. This is done using a public-private key pair.</p>
+<p>Previously, any data in the filesystem realm was not verified, this meant that anyone with access to the identity files, could tamper with the data without any way of knowing. WildFly 27 adds support for filesystem integrity checking by adding signatures to identity files. This is done using a public-private key pair.</p>
 </div>
 <div class="sect1">
 <h2 id="an-overview-of-the-new-attributes"><a class="anchor" href="#an-overview-of-the-new-attributes"></a>An overview of the new attributes</h2>
@@ -281,7 +281,7 @@ attributes <code>Guest</code> and <code>Admin</code> as follows:</p>
 </div>
 <div class="paragraph">
 <p>For more information about creating FileSystem realms along with all of its possible configurations,
-please refer to the <a href="https://docs.wildfly.org/26/WildFly_Elytron_Security.html">Elytron documentation</a>.</p>
+please refer to the <a href="https://docs.wildfly.org/27/WildFly_Elytron_Security.html">Elytron documentation</a>.</p>
 </div>
 <div class="paragraph">
 <p>We then configure a simple role decoder and create a new security domain which will make use of our
