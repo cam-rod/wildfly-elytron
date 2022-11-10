@@ -5,7 +5,49 @@
         <title>WildFly Elytron</title>
         <link>https://wildfly-security.github.io/wildfly-elytron</link>
         <description></description>
-        <lastBuildDate>Thu, 29 Sep 2022 16:30:42 +0000</lastBuildDate>
+        <lastBuildDate>Thu, 10 Nov 2022 14:56:13 +0000</lastBuildDate>
+        
+        <item>
+            <title>Grace Hopper Celebration Recap</title>
+            <link>
+                https://wildfly-security.github.io/wildfly-elytron/blog/ghc22-recap/
+            </link>
+            <description>
+                Last month, I had the opportunity to attend and speak at the 2022 Grace Hopper Celebration. This was my very first time attending this conference in person after attending virtually last year. This was the largest conference I have ever been to and it definitely had a lasting impact on...
+            </description>
+            <pubDate>Mon, 31 Oct 2022 00:00:00 +0000</pubDate>
+            <guid>
+                https://wildfly-security.github.io/wildfly-elytron/blog/ghc22-recap/
+            </guid>
+        </item>
+        
+        <item>
+            <title>Open Source Day 2022 Recap</title>
+            <link>
+                https://wildfly-security.github.io/wildfly-elytron/blog/ghc22-open-source-day-recap/
+            </link>
+            <description>
+                Last month, the WildFly Elytron team had the great pleasure of participating in Open Source Day, an all-day hackathon that took place as a pre-event before the 2022 Grace Hopper Celebration. This was the WildFly Elytron team&#8217;s third time participating in this event, after having participated in the Summer Open...
+            </description>
+            <pubDate>Fri, 14 Oct 2022 00:00:00 +0000</pubDate>
+            <guid>
+                https://wildfly-security.github.io/wildfly-elytron/blog/ghc22-open-source-day-recap/
+            </guid>
+        </item>
+        
+        <item>
+            <title>Hacktoberfest Has Started</title>
+            <link>
+                https://wildfly-security.github.io/wildfly-elytron/hacktoberfest/
+            </link>
+            <description>
+                
+            </description>
+            <pubDate>Fri, 07 Oct 2022 00:00:00 +0000</pubDate>
+            <guid>
+                https://wildfly-security.github.io/wildfly-elytron/hacktoberfest/
+            </guid>
+        </item>
         
         <item>
             <title>FAQ for New Contributors</title>
@@ -78,6 +120,20 @@
         </item>
         
         <item>
+            <title>Enabling Integrity on Filesystem realms</title>
+            <link>
+                https://wildfly-security.github.io/wildfly-elytron/blog/filesystem-integrity/
+            </link>
+            <description>
+                Previously, any data in the filesystem realm was not verified, this meant that anyone with access to the identity files, could tamper with the data without any way of knowing. Wildfly 27 adds support for filesystem integrity checking has been added by adding signatures to identity files. This is done...
+            </description>
+            <pubDate>Wed, 08 Jun 2022 00:00:00 +0000</pubDate>
+            <guid>
+                https://wildfly-security.github.io/wildfly-elytron/blog/filesystem-integrity/
+            </guid>
+        </item>
+        
+        <item>
             <title>New Security Features in WildFly 26.1</title>
             <link>
                 https://wildfly-security.github.io/wildfly-elytron/blog/new-security-features-wildfly-26-1/
@@ -88,62 +144,6 @@
             <pubDate>Tue, 19 Apr 2022 00:00:00 +0000</pubDate>
             <guid>
                 https://wildfly-security.github.io/wildfly-elytron/blog/new-security-features-wildfly-26-1/
-            </guid>
-        </item>
-        
-        <item>
-            <title>Improving readability of certificate read commands</title>
-            <link>
-                https://wildfly-security.github.io/wildfly-elytron/blog/improving-readability-of-alias-commands/
-            </link>
-            <description>
-                Any one who has experience with network hardware or console administration knows the Achilles' heel of CLI - limited visualization capability. This can be somewhat mitigated by setting large horizontal buffer and simple scrolling. However not all devices support scrolling and output still can be loitered with wrapped lines. This...
-            </description>
-            <pubDate>Tue, 19 Apr 2022 00:00:00 +0000</pubDate>
-            <guid>
-                https://wildfly-security.github.io/wildfly-elytron/blog/improving-readability-of-alias-commands/
-            </guid>
-        </item>
-        
-        <item>
-            <title>Encrypting Filesystem realms</title>
-            <link>
-                https://wildfly-security.github.io/wildfly-elytron/blog/filesystem-encryption/
-            </link>
-            <description>
-                Previously, any data in the filesystem realm was always stored unencrypted, this meant that anyone with access to the filesystem identity files could access the credentials, and attributes (such as assigned roles). Now encryption has been added via a SecretKey. An overview of the new attributes The filesystem realm now...
-            </description>
-            <pubDate>Tue, 19 Apr 2022 00:00:00 +0000</pubDate>
-            <guid>
-                https://wildfly-security.github.io/wildfly-elytron/blog/filesystem-encryption/
-            </guid>
-        </item>
-        
-        <item>
-            <title>Encrypting Pre-Existing Filesystem realms</title>
-            <link>
-                https://wildfly-security.github.io/wildfly-elytron/blog/filesystem-encryption-tool/
-            </link>
-            <description>
-                Overview With the addition of the filesystem realm encryption feature outlined here, a feature was added to the Elytron Tool to encrypt a pre-existing filesystem realm. Method to run the tool There are two methods to run the tool, one is on the command line, that only lets you apply...
-            </description>
-            <pubDate>Tue, 19 Apr 2022 00:00:00 +0000</pubDate>
-            <guid>
-                https://wildfly-security.github.io/wildfly-elytron/blog/filesystem-encryption-tool/
-            </guid>
-        </item>
-        
-        <item>
-            <title>Client side default SSL context provider</title>
-            <link>
-                https://wildfly-security.github.io/wildfly-elytron/blog/client-default-ssl-context/
-            </link>
-            <description>
-                Elytron client now provides a java security provider which can be used to register a JVM wide default SSLContext. When this provider is registered with high enough priority and the method SSLContext.getDefault() is called, the provider instantiates and returns an SSLContext based on an Elytron client configuration file. So all...
-            </description>
-            <pubDate>Tue, 19 Apr 2022 00:00:00 +0000</pubDate>
-            <guid>
-                https://wildfly-security.github.io/wildfly-elytron/blog/client-default-ssl-context/
             </guid>
         </item>
         
