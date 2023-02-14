@@ -5,7 +5,35 @@
         <title>WildFly Elytron</title>
         <link>https://wildfly-security.github.io/wildfly-elytron</link>
         <description></description>
-        <lastBuildDate>Wed, 07 Dec 2022 17:34:58 +0000</lastBuildDate>
+        <lastBuildDate>Tue, 14 Feb 2023 23:10:43 +0000</lastBuildDate>
+        
+        <item>
+            <title>AMA Recap</title>
+            <link>
+                https://wildfly-security.github.io/wildfly-elytron/blog/ask-me-anything-recap/
+            </link>
+            <description>
+                The WildFly Elytron team had our very first Ask Me Anything (AMA) session on chat this week. Thanks very much to those who joined! This blog post gives a recap of the session in case you missed it. Q: How can I contribute to Elytron as a person who has...
+            </description>
+            <pubDate>Thu, 22 Dec 2022 00:00:00 +0000</pubDate>
+            <guid>
+                https://wildfly-security.github.io/wildfly-elytron/blog/ask-me-anything-recap/
+            </guid>
+        </item>
+        
+        <item>
+            <title>Ask Me Anything with the WildFly Elytron Team</title>
+            <link>
+                https://wildfly-security.github.io/wildfly-elytron/blog/ask-me-anything/
+            </link>
+            <description>
+                The WildFly Elytron team will be having an Ask Me Anything (AMA) session on Monday Dec. 19th on chat. This is your chance to ask any questions about: Contributing to the WildFly Elytron project How to use WildFly Elytron General questions about contributing to open source projects The AMA session...
+            </description>
+            <pubDate>Wed, 14 Dec 2022 00:00:00 +0000</pubDate>
+            <guid>
+                https://wildfly-security.github.io/wildfly-elytron/blog/ask-me-anything/
+            </guid>
+        </item>
         
         <item>
             <title>Vlog: Filesystem Realm Integrity</title>
@@ -116,34 +144,6 @@
             <pubDate>Thu, 01 Sep 2022 00:00:00 +0000</pubDate>
             <guid>
                 https://wildfly-security.github.io/wildfly-elytron/blog/bearer-only-support-openid-connect/
-            </guid>
-        </item>
-        
-        <item>
-            <title>Top 5 Reasons To Join Us At Open Source Day</title>
-            <link>
-                https://wildfly-security.github.io/wildfly-elytron/blog/top-five-reasons-to-join-elytron-open-source-day/
-            </link>
-            <description>
-                Last month, we were thrilled to announce that the WildFly Elytron project was selected for Open Source Day, an all-day hackathon hosted by AnitaB.org as part of the Grace Hopper Celebration. This is our third time taking part in this event, after having participated in the Summer Open Source Day...
-            </description>
-            <pubDate>Tue, 09 Aug 2022 00:00:00 +0000</pubDate>
-            <guid>
-                https://wildfly-security.github.io/wildfly-elytron/blog/top-five-reasons-to-join-elytron-open-source-day/
-            </guid>
-        </item>
-        
-        <item>
-            <title>Vlog: Encrypting a Filesystem Realm</title>
-            <link>
-                https://www.youtube.com/watch?v=1K92tit2uCk
-            </link>
-            <description>
-                
-            </description>
-            <pubDate>Thu, 07 Jul 2022 00:00:00 +0000</pubDate>
-            <guid>
-                https://www.youtube.com/watch?v=1K92tit2uCk
             </guid>
         </item>
         
