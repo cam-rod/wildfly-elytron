@@ -176,6 +176,8 @@
             
               <a style="font-size: 0.9em;" href="/wildfly-elytron/blog/tag/principal"> #principal</a>
             
+              <a style="font-size: 0.9em;" href="/wildfly-elytron/blog/tag/principal-transformer"> #principal-transformer</a>
+            
           
         </p>
       </div>
@@ -223,8 +225,8 @@ this works.</p>
 <li><a href="#accessing-the-custom-principal">Accessing the custom principal</a>
 <ul class="sectlevel2">
 <li><a href="#jakarta-security">Jakarta Security</a></li>
-<li><a href="#jakarta-enterprise-beans-ejbs">Jakarta Enterprise Beans (EJBs)</a></li>
 <li><a href="#using-securitycontext-with-elytron">Using SecurityContext with Elytron</a></li>
+<li><a href="#jakarta-enterprise-beans-ejbs">Jakarta Enterprise Beans (EJBs)</a></li>
 </ul>
 </li>
 <li><a href="#flexible-principals-for-real-time-functionality">Flexible principals for real-time functionality</a></li>
@@ -458,6 +460,23 @@ available to the Servlet.</p>
 </div>
 </div>
 <div class="sect2">
+<h3 id="using-securitycontext-with-elytron"><a class="anchor" href="#using-securitycontext-with-elytron"></a>Using SecurityContext with Elytron</h3>
+<div class="paragraph">
+<p>When securing an application using an Elytron HTTP authentication
+mechanism instead of Jakarta Security, it’s still possible to use the
+<code>SecurityContext</code> to retrieve the custom principal from within an
+application. By creating the default JACC policy and injecting a
+<code>SecurityContext</code> into an application, WildFly will automatically allow
+the application to use the interface to access the authorized identity.
+The
+<a href="https://github.com/wildfly-security-incubator/elytron-examples/tree/main/custom-principal-ejb"><strong>custom-principal-elytron</strong></a>
+example is similar to the
+<a href="https://github.com/wildfly-security-incubator/elytron-examples/tree/main/custom-principal-ee"><strong>custom-principal-ee</strong></a>
+demo, but unlike the Jakarta Security application, it uses one of Elytron&#8217;s
+built-in authentication mechanisms.</p>
+</div>
+</div>
+<div class="sect2">
 <h3 id="jakarta-enterprise-beans-ejbs"><a class="anchor" href="#jakarta-enterprise-beans-ejbs"></a>Jakarta Enterprise Beans (EJBs)</h3>
 <div class="paragraph">
 <p>The custom principal can be retrieved by any class implementing
@@ -492,22 +511,6 @@ public class MyBean implements MyBeanInterface {
 <p>The <a href="https://github.com/wildfly-security-incubator/elytron-examples/tree/main/custom-principal-ejb"><strong>custom-principal-ejb</strong></a>
 example demonstrates a pair of EJBs and a remote client using methods
 from a custom principal.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="using-securitycontext-with-elytron"><a class="anchor" href="#using-securitycontext-with-elytron"></a>Using SecurityContext with Elytron</h3>
-<div class="paragraph">
-<p>When securing an application using an Elytron HTTP authentication
-mechanism instead of Jakarta Security, it’s still possible to use the
-<code>SecurityContext</code> to retrieve the custom principal from within an
-application. By creating the default JACC policy and injecting a
-<code>SecurityContext</code> into an application, WildFly will automatically allow
-the application to use the interface to access the authorized identity.
-The
-<a href="https://github.com/wildfly-security-incubator/elytron-examples/tree/main/custom-principal-ejb"><strong>custom-principal-elytron</strong></a>
-example is similar to the <strong>custom-principal-ee</strong> demo, but unlike the
-Jakarta Security application, it uses one of Elytron&#8217;s built-in
-authentication mechanisms.</p>
 </div>
 </div>
 </div>
