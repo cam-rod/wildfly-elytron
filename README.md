@@ -57,7 +57,7 @@ To write a blog post:
     - To view your blog post without needing to build locally, the following steps can be used:
         - If you haven't done so already, generate a fine-grained GitHub token following the instructions
           [here](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token). Use this value to add a `PUSH_GITHUB_TOKEN` secret to your
-          repository settings (i.e., https://github.com/<YOUR_GITHUB_USERNAME>/wildfly-elytron/settings).
+          repository secrets (i.e., https://github.com/<YOUR_GITHUB_USERNAME>/wildfly-elytron/settings/secrets/actions).
           - You should set the **Resource owner** to your user account, and **Repository access** to "Only select repositories", and then your fork of `wildfly-elytron`. The only repository permissions needed are **Read and write access to _Contents_** (this also enables **Read access to _Metadata_**, which is required).
         - Simply push your changes to the `develop` branch on your `wildfly-elytron` fork. This will trigger a website
           build that will get pushed to the `gh-pages` branch on your fork. Then browse to
